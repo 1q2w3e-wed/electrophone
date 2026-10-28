@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>电子琴在线曲谱</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17233b;
+      --muted: #61708a;
+      --paper: #f5f1e8;
+      --panel: #fffdf7;
+      --line: #ded6c7;
+      --accent: #0d7774;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    }
+    main {
+      width: min(860px, calc(100% - 32px));
+      margin: 40px auto;
+    }
+    h1 { margin: 0 0 8px; font-size: clamp(28px, 5vw, 42px); }
+    .intro { margin: 0 0 28px; color: var(--muted); line-height: 1.7; }
+    .scores {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      display: block;
+      min-height: 118px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel);
+      color: var(--ink);
+      text-decoration: none;
+      box-shadow: 0 8px 22px rgb(23 35 59 / 6%);
+    }
+    .card:hover, .card:focus-visible {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .card strong { display: block; margin-bottom: 8px; font-size: 19px; }
+    .card span { color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .footer {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>电子琴在线曲谱</h1>
+    <p class="intro">
+      点击歌名可下载设备使用的 NOTE 文本。电子琴曲谱 App 会读取
+      <a href="catalog.json">catalog.json</a> 自动搜索这些曲谱。
+    </p>
+    <section class="scores">
+      <a class="card" href="scores/小星星.txt"><strong>小星星</strong><span>儿歌 · 入门</span></a>
+      <a class="card" href="scores/两只老虎.txt"><strong>两只老虎</strong><span>儿歌 · 入门</span></a>
+      <a class="card" href="scores/欢乐颂.txt"><strong>欢乐颂</strong><span>古典 · 入门</span></a>
+      <a class="card" href="scores/玛丽有只小羊羔.txt"><strong>玛丽有只小羊羔</strong><span>儿歌 · 入门</span></a>
+      <a class="card" href="scores/伦敦桥.txt"><strong>伦敦桥</strong><span>儿歌 · 入门</span></a>
+      <a class="card" href="scores/划船歌.txt"><strong>划船歌</strong><span>儿歌 · 入门</span></a>
+      <a class="card" href="scores/得吃小曲.txt"><strong>得吃小曲</strong><span>练习 · 入门</span></a>
+    </section>
+    <p class="footer">
+      曲谱为设备专用 NOTE 事件格式，不是图片简谱。新增曲谱时需要同时上传
+      txt 文件，并在 catalog.json 中增加目录记录。
+    </p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,30 @@
+v 4
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\ui_types.vhd" "0560797caf575c73bac5031a7175854b315a018f" "20261026160352.224":
+  package ui_types at 1( 0) + 0 on 11;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\ui_layout.vhd" "4afcf5d9526a3fbfd421f9b4d0c4196ec8e61205" "20261026160352.225":
+  package ui_layout at 1( 0) + 0 on 12 body;
+  package body ui_layout at 56( 1813) + 0 on 13;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\cjk_font_rom.vhd" "2e1f022ea65fe8e8123de851f180b98b8d2e35f4" "20261026160352.226":
+  package cjk_font_rom at 1( 0) + 0 on 14 body;
+  package body cjk_font_rom at 138( 11473) + 0 on 15;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\spectrum_tables.vhd" "ecad23f2f130de5f22ff2ceb95104b671acdb16e" "20261026160352.237":
+  package spectrum_tables at 1( 0) + 0 on 16 body;
+  package body spectrum_tables at 533( 94333) + 0 on 17;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\spectrum_capture_ram.vhd" "eee9e46d8719992333adb512767d38bade294f23" "20261026160352.237":
+  entity spectrum_capture_ram at 1( 0) + 0 on 18;
+  architecture rtl of spectrum_capture_ram at 18( 513) + 0 on 19;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\spectrum_work_ram.vhd" "b9bf8cb0404862753e104d39d08ad0115a651be0" "20261026160352.238":
+  entity spectrum_work_ram at 1( 0) + 0 on 20;
+  architecture rtl of spectrum_work_ram at 18( 536) + 0 on 21;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\spectrum_analyzer.vhd" "da326a3e41218d970167b84179d7b58f3fa8a460" "20261026160352.239":
+  entity spectrum_analyzer at 1( 0) + 0 on 22;
+  architecture rtl of spectrum_analyzer at 21( 618) + 0 on 23;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\wave_preview.vhd" "4f3ffe0efd831a63229b65e3f957ebd0e37abce2" "20261026161816.458":
+  entity wave_preview at 1( 0) + 0 on 30;
+  architecture rtl of wave_preview at 26( 818) + 0 on 31;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\color_ui_renderer.vhd" "1bd1877163e3b4461faaa1529a39e0d6cdde119c" "20261026161816.461":
+  entity color_ui_renderer at 1( 0) + 0 on 32;
+  architecture rtl of color_ui_renderer at 30( 986) + 0 on 33;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "sim\tb_dashboard.vhd" "08a6da3cc49bc2780f9abf780005155a7e9c6a3c" "20261026161816.462":
+  entity tb_dashboard at 1( 0) + 0 on 34;
+  architecture sim of tb_dashboard at 12( 197) + 0 on 35;

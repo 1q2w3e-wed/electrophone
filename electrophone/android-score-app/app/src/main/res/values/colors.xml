@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="navy">#0B2447</color>
+    <color name="navy_dark">#06152B</color>
+    <color name="blue">#155EEF</color>
+    <color name="teal">#078CA8</color>
+    <color name="paper">#F3F7FC</color>
+    <color name="ink">#14233B</color>
+    <color name="muted">#687B94</color>
+    <color name="line">#D7E3F1</color>
+    <color name="soft_blue">#EAF3FF</color>
+    <color name="header_text_secondary">#C9DDF7</color>
+    <color name="danger">#C62828</color>
+    <color name="white">#FFFFFF</color>
+</resources>

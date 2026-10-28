@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.9\\com.electrophone.scoreapp-debug-4:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.9\\com.electrophone.scoreapp-main-6:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.9\\com.electrophone.scoreapp-debug-4:\\drawable_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.9\\com.electrophone.scoreapp-main-6:\\drawable\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.9\\com.electrophone.scoreapp-debug-4:\\drawable_tab_bar_background.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.9\\com.electrophone.scoreapp-main-6:\\drawable\\tab_bar_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.9\\com.electrophone.scoreapp-debug-4:\\drawable_header_background.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.9\\com.electrophone.scoreapp-main-6:\\drawable\\header_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.9\\com.electrophone.scoreapp-debug-4:\\drawable_editor_background.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.9\\com.electrophone.scoreapp-main-6:\\drawable\\editor_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.9\\com.electrophone.scoreapp-debug-4:\\drawable_panel_background.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.9\\com.electrophone.scoreapp-main-6:\\drawable\\panel_background.xml"
+    },
+    {
+        "merged": "com.electrophone.scoreapp-debug-4:/layout_activity_main.xml.flat",
+        "source": "com.electrophone.scoreapp-main-6:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.9\\com.electrophone.scoreapp-debug-4:\\drawable_status_background.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.9\\com.electrophone.scoreapp-main-6:\\drawable\\status_background.xml"
+    }
+]

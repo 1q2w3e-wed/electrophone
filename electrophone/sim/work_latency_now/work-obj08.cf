@@ -1,0 +1,30 @@
+v 4
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "sim\tb_sensor_noise.vhd" "724cdcbaac4e81b9c6c343c9452540e910efc40f" "20261024155438.745":
+  entity tb_sensor_noise at 1( 0) + 0 on 49;
+  architecture sim of tb_sensor_noise at 9( 132) + 0 on 50;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\synth_engine.vhd" "1d6566fd3f53e25f83e4d6a7649025f5e3874444" "20261024154834.219":
+  entity synth_engine at 1( 0) + 0 on 37;
+  architecture rtl of synth_engine at 28( 879) + 0 on 38;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\voice_allocator.vhd" "4411cabed4022e299a87f248dfab87fb54c7f3e0" "20261024154834.171":
+  entity voice_allocator at 1( 0) + 0 on 33;
+  architecture rtl of voice_allocator at 24( 838) + 0 on 34;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\mcp3008_reader.vhd" "2d72dc1a9568e8260faaad332b33e96c157f5d10" "20261024155438.650":
+  entity mcp3008_reader at 1( 0) + 0 on 41;
+  architecture rtl of mcp3008_reader at 24( 648) + 0 on 42;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\ui_types.vhd" "b0805adc681ed46ddce7e170701152ebac1cc42e" "20261024154834.075":
+  package ui_types at 1( 0) + 0 on 26;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\pitch_lut.vhd" "6c87d474669d9d77417be07215ed395dd0ac4311" "20261024154834.102":
+  package pitch_lut at 1( 0) + 0 on 27 body;
+  package body pitch_lut at 66( 5371) + 0 on 28;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\sensor_scanner.vhd" "7e1805ba15be9b064bb6a69072f4dfde6381b67f" "20261024155438.677":
+  entity sensor_scanner at 1( 0) + 0 on 43;
+  architecture rtl of sensor_scanner at 26( 812) + 0 on 44;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\voice_state_ram.vhd" "4dfc69cbf6841231648cf24113d83784fe0d0d6a" "20261024154834.193":
+  entity voice_state_ram at 1( 0) + 0 on 35;
+  architecture rtl of voice_state_ram at 17( 420) + 0 on 36;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "sim\tb_input_latency.vhd" "994d7e64ec84d21ca2db839915705a0a1ee9f35d" "20261024155438.700":
+  entity tb_input_latency at 1( 0) + 0 on 45;
+  architecture sim of tb_input_latency at 11( 273) + 0 on 46;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "sim\tb_sensor_scanner.vhd" "1016c7ed8f33c4c9096f4ef760a96f964e74054f" "20261024155438.722":
+  entity tb_sensor_scanner at 1( 0) + 0 on 47;
+  architecture sim of tb_sensor_scanner at 9( 134) + 0 on 48;

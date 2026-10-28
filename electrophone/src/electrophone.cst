@@ -1,0 +1,88 @@
+// Clock verified against Sipeed TangPrimer-25K-example/pmod_led.
+IO_LOC "clk" E2;
+IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+
+IO_LOC "rst_n" H11;
+IO_PORT "rst_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+// JDY-31 four-pin SPP module on J6.
+IO_LOC "bt_rx" J5;
+IO_LOC "bt_tx" H7;
+IO_PORT "bt_rx" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_PORT "bt_tx" IO_TYPE=LVCMOS33 DRIVE=8;
+
+// Eight note-guide LEDs on the unused first four rows of J3.
+// Active high: FPGA pin -> LED anode; LED cathode -> common GND.
+IO_LOC "led_note0" K2;  // J3-1
+IO_LOC "led_note1" K1;  // J3-2
+IO_LOC "led_note2" L1;  // J3-3
+IO_LOC "led_note3" L2;  // J3-4
+IO_LOC "led_note4" K4;  // J3-5
+IO_LOC "led_note5" J4;  // J3-6
+IO_LOC "led_note6" G1;  // J3-7
+IO_LOC "led_note7" G2;  // J3-8
+IO_PORT "led_note0" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_PORT "led_note1" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_PORT "led_note2" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_PORT "led_note3" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_PORT "led_note4" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_PORT "led_note5" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_PORT "led_note6" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_PORT "led_note7" IO_TYPE=LVCMOS33 DRIVE=8;
+
+// MCP3008 eight-channel pressure ADC.
+IO_LOC "spi_clk" J7;
+IO_LOC "spi_din" K7;
+IO_LOC "spi_dout" L8;
+IO_LOC "spi_cs_n" L7;
+IO_PORT "spi_clk" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_PORT "spi_din" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_PORT "spi_dout" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_PORT "spi_cs_n" IO_TYPE=LVCMOS33 DRIVE=8;
+
+// MAX98357A I2S output.
+IO_LOC "i2s_lrclk" L10;
+IO_LOC "i2s_bclk" K10;
+IO_LOC "i2s_din" K9;
+IO_PORT "i2s_lrclk" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_PORT "i2s_bclk" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_PORT "i2s_din" IO_TYPE=LVCMOS33 DRIVE=8;
+
+// Expansion-board SW1: A=J8, B=F6, D=F7, C/E=GND.
+IO_LOC "enc1_a" J8;
+IO_LOC "enc1_b" F6;
+IO_LOC "enc1_key_n" F7;
+IO_PORT "enc1_a" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_PORT "enc1_b" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_PORT "enc1_key_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+// Expansion-board SW2: A=J10, B=J11, D=H1, C/E=GND.
+IO_LOC "enc2_a" J10;
+IO_LOC "enc2_b" J11;
+IO_LOC "enc2_key_n" H1;
+IO_PORT "enc2_a" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_PORT "enc2_b" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_PORT "enc2_key_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+// 4.0-inch ST7796S LCD spread evenly over J4/J5/J6.
+// J4-5/J4-7: adjacent pins on one row.
+IO_LOC "lcd_sclk" C11;
+IO_LOC "lcd_mosi" B11;
+// J5-5/J5-7: adjacent pins on one row.
+IO_LOC "lcd_cs_n" L5;
+IO_LOC "lcd_dc" K11;
+// J6-5/J6-7: adjacent pins on the opposite row from Bluetooth.
+IO_LOC "lcd_rst_n" H5;
+IO_LOC "lcd_bl" H8;
+IO_PORT "lcd_sclk" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_PORT "lcd_mosi" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_PORT "lcd_cs_n" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_PORT "lcd_dc" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_PORT "lcd_rst_n" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_PORT "lcd_bl" IO_TYPE=LVCMOS33 DRIVE=8;
+
+// JDY VCC -> J6-2 (+3V3)
+// JDY GND -> J6-4 (GND)
+// JDY TX  -> J6-6 (FPGA RX, pin J5)
+// JDY RX  -> J6-8 (FPGA TX, pin H7)
+

@@ -1,0 +1,148 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+-- Generated 16x16 Chinese glyph subset. Run scripts/gen_cjk_font.py to rebuild.
+package cjk_font_rom is
+    type cjk_char_t is (
+        CJK_SPACE,
+        CJK_DIAN,
+        CJK_ZI,
+        CJK_QIN,
+        CJK_CAN,
+        CJK_SHU,
+        CJK_TAI,
+        CJK_DANG,
+        CJK_QIAN,
+        CJK_YIN,
+        CJK_SE,
+        CJK_LIANG,
+        CJK_QI,
+        CJK_SHUAI,
+        CJK_JIAN,
+        CJK_CHI,
+        CJK_XU,
+        CJK_SHI,
+        CJK_BO,
+        CJK_BO2,
+        CJK_XING,
+        CJK_YU,
+        CJK_LAN,
+        CJK_BAO,
+        CJK_LUO,
+        CJK_ZHENG,
+        CJK_XIAN,
+        CJK_FANG,
+        CJK_JU,
+        CJK_CHI2,
+        CJK_SAN,
+        CJK_JIAO,
+        CJK_YI,
+        CJK_HUI,
+        CJK_FU,
+        CJK_MO,
+        CJK_REN,
+        CJK_PIN,
+        CJK_BA,
+        CJK_LU,
+        CJK_YA,
+        CJK_LI,
+        CJK_WAN,
+        CJK_ROU,
+        CJK_HUA,
+        CJK_TA,
+        CJK_BAN,
+        CJK_PU,
+        CJK_LI2,
+        CJK_SA,
+        CJK_RU,
+        CJK_XIAO,
+        CJK_GUO,
+        CJK_YUAN,
+        CJK_SHENG,
+        CJK_YAN,
+        CJK_CHI3,
+        CJK_HE,
+        CJK_CHANG,
+        CJK_HUN,
+        CJK_XIANG
+    );
+    type cjk_string_t is array (natural range <>) of cjk_char_t;
+    type glyph_rows_t is array (0 to 15) of std_logic_vector(15 downto 0);
+    type glyph_table_t is array (cjk_char_t) of glyph_rows_t;
+
+    constant CJK_GLYPHS : glyph_table_t := (
+        CJK_SPACE => (others => x"0000"),
+        CJK_DIAN => (x"0000", x"0100", x"0100", x"3FF0", x"3FF8", x"2108", x"2108", x"3FF8", x"2108", x"2108", x"3FF8", x"3FF8", x"2100", x"0102", x"01FE", x"00FC"),
+        CJK_ZI => (x"0000", x"0000", x"3FFC", x"0038", x"0060", x"0180", x"0180", x"7FFE", x"7FFE", x"0180", x"0180", x"0180", x"0180", x"0180", x"0700", x"0000"),
+        CJK_QIN => (x"0000", x"0000", x"7FFE", x"0810", x"3E7C", x"0810", x"3E7E", x"7180", x"03C0", x"0C70", x"799E", x"6006", x"1FF0", x"0060", x"00C0", x"0080"),
+        CJK_CAN => (x"0000", x"0100", x"0360", x"0430", x"1FF8", x"0308", x"7FFE", x"0E30", x"19D8", x"778E", x"4CE6", x"0398", x"1E38", x"01E0", x"1F00", x"1000"),
+        CJK_SHU => (x"0000", x"0C20", x"2D20", x"0F60", x"7FFE", x"1C7E", x"3ECC", x"6DCC", x"08EC", x"7F68", x"1338", x"3238", x"1F38", x"0D7C", x"78C6", x"0000"),
+        CJK_TAI => (x"0000", x"0300", x"0600", x"0630", x"0C38", x"1818", x"3FFC", x"3806", x"0000", x"1FF8", x"1008", x"1008", x"1008", x"1FF8", x"1FF8", x"1008"),
+        CJK_DANG => (x"0000", x"0180", x"118C", x"198C", x"1998", x"0990", x"0180", x"3FFC", x"0004", x"000C", x"3FFC", x"0004", x"0004", x"3FFC", x"000C", x"0004"),
+        CJK_QIAN => (x"0000", x"0430", x"0630", x"7FFE", x"7FFE", x"0004", x"3F6C", x"216C", x"3F6C", x"336C", x"336C", x"3F6C", x"212C", x"210C", x"271C", x"2208"),
+        CJK_YIN => (x"0000", x"0100", x"0180", x"3FFC", x"0C30", x"0420", x"7FFE", x"7FFE", x"0000", x"1FF8", x"1818", x"1FF8", x"1818", x"1818", x"1FF8", x"1000"),
+        CJK_SE => (x"0000", x"0600", x"0600", x"0FE0", x"1860", x"30C0", x"7FF8", x"1988", x"1988", x"1FF8", x"1808", x"1800", x"1800", x"1806", x"1FFC", x"0000"),
+        CJK_LIANG => (x"0000", x"0FF0", x"1FF8", x"1FF8", x"1818", x"1FF8", x"7FFE", x"0000", x"1FF8", x"1FF8", x"1998", x"1FF8", x"1FF8", x"0180", x"7FFE", x"0000"),
+        CJK_QI => (x"0000", x"0800", x"08FC", x"3F0C", x"0C04", x"0804", x"3F7C", x"7F7C", x"0C40", x"2E40", x"2F46", x"3C46", x"7C7C", x"4C00", x"47FE", x"0000"),
+        CJK_SHUAI => (x"0000", x"0180", x"7FFE", x"0000", x"0FF8", x"1FF8", x"7FFE", x"7FFE", x"1818", x"1FF8", x"0288", x"0ED8", x"1C70", x"773E", x"070E", x"0400"),
+        CJK_JIAN => (x"0000", x"0068", x"006C", x"406C", x"6FFC", x"3820", x"0BE4", x"082C", x"1BAC", x"3AB8", x"2AB8", x"6BB0", x"5BBA", x"586A", x"30CE", x"0000"),
+        CJK_CHI => (x"0000", x"1020", x"1820", x"19FC", x"7DFC", x"7C20", x"1BFE", x"1BFE", x"1C08", x"7BFE", x"59FE", x"1908", x"1988", x"1088", x"7038", x"2030"),
+        CJK_XU => (x"0000", x"1020", x"31FE", x"31FE", x"2C20", x"69FE", x"7884", x"10F4", x"3130", x"79B0", x"78B0", x"03FE", x"0C60", x"78DC", x"0386", x"0000"),
+        CJK_SHI => (x"0000", x"0EFC", x"7CFC", x"0A4C", x"6A78", x"2A30", x"7CFE", x"7FC6", x"1830", x"3EFC", x"3A30", x"68FE", x"49FE", x"0830", x"0830", x"0010"),
+        CJK_BO => (x"0000", x"0020", x"3020", x"1BFE", x"03FC", x"4224", x"7220", x"13FC", x"028C", x"1A88", x"16D8", x"3670", x"6470", x"4CF8", x"0B8E", x"0200"),
+        CJK_BO2 => (x"0000", x"1060", x"116C", x"1364", x"1BFE", x"7FFE", x"10C0", x"10FC", x"1CFC", x"79CC", x"5348", x"1678", x"1430", x"10FC", x"338E", x"2000"),
+        CJK_XING => (x"0000", x"0000", x"7F8C", x"1318", x"1330", x"1360", x"1304", x"7F8C", x"1B18", x"1370", x"1366", x"330E", x"3318", x"6330", x"6260", x"0000"),
+        CJK_YU => (x"0000", x"0000", x"7FFE", x"0C20", x"3820", x"18FC", x"0884", x"7EB4", x"1EB4", x"18B4", x"18A4", x"18A4", x"1868", x"10CC", x"7186", x"0100"),
+        CJK_LAN => (x"0000", x"2440", x"2440", x"24FE", x"2480", x"2598", x"2408", x"0FF0", x"1FF0", x"1810", x"1910", x"1BD0", x"12C0", x"0CC2", x"78FE", x"2000"),
+        CJK_BAO => (x"0000", x"0C00", x"0C00", x"1FFC", x"100C", x"300C", x"7FCC", x"58C8", x"18C8", x"1FC8", x"1FC8", x"1838", x"1802", x"1806", x"0FFE", x"0000"),
+        CJK_LUO => (x"0000", x"00C0", x"10C0", x"30FC", x"25CC", x"6FD8", x"7A70", x"5870", x"11DE", x"338E", x"7DFC", x"218C", x"058C", x"7DFC", x"61FC", x"0084"),
+        CJK_ZHENG => (x"0000", x"0000", x"3FFC", x"3FFC", x"0080", x"0080", x"1880", x"18FC", x"18FC", x"1880", x"1880", x"1880", x"1880", x"7FFC", x"7FFE", x"0000"),
+        CJK_XIAN => (x"0000", x"0020", x"7C20", x"0FFE", x"0C40", x"7C40", x"7888", x"418C", x"61F8", x"7DF0", x"0C20", x"0844", x"0884", x"09FE", x"39C6", x"0000"),
+        CJK_FANG => (x"0000", x"0100", x"0180", x"0100", x"7FFE", x"0600", x"0400", x"0600", x"07F8", x"0408", x"0C08", x"0C18", x"1818", x"3018", x"70F0", x"0040"),
+        CJK_JU => (x"0000", x"1800", x"31FE", x"3F06", x"6186", x"61FC", x"3D10", x"19FE", x"19FE", x"7F10", x"197C", x"1D7C", x"1F44", x"1B7C", x"167C", x"0044"),
+        CJK_CHI2 => (x"0000", x"0080", x"0880", x"08FC", x"0880", x"0880", x"7FFE", x"0000", x"118C", x"318C", x"33CC", x"366C", x"3C3C", x"340C", x"1FFC", x"0008"),
+        CJK_SAN => (x"0000", x"0000", x"1FF8", x"3FFC", x"0000", x"0000", x"0000", x"1FF0", x"1FF8", x"0000", x"0000", x"0000", x"0000", x"7FFE", x"7FFE", x"0000"),
+        CJK_JIAO => (x"0000", x"0600", x"0600", x"0FF0", x"1860", x"7FFC", x"1FFC", x"1884", x"1FFC", x"1084", x"198C", x"1FFC", x"3084", x"3084", x"609C", x"0000"),
+        CJK_YI => (x"0000", x"0000", x"3FF8", x"0018", x"0008", x"2008", x"3008", x"3FF8", x"3018", x"3000", x"3000", x"3000", x"3006", x"3006", x"1FFC", x"0000"),
+        CJK_HUI => (x"0000", x"10C0", x"1080", x"13FE", x"17FC", x"7D90", x"5730", x"51F6", x"53F4", x"12BC", x"16B0", x"1C78", x"10C8", x"118E", x"1306", x"0000"),
+        CJK_FU => (x"0000", x"0400", x"0FFC", x"1FFC", x"3FF8", x"6818", x"0FF8", x"0808", x"0FF8", x"0600", x"0FF8", x"1E30", x"3360", x"01C0", x"3F7E", x"3006"),
+        CJK_MO => (x"0000", x"0010", x"7F18", x"6B14", x"7F16", x"4930", x"7FFE", x"0830", x"7F30", x"0838", x"7F28", x"4168", x"754C", x"54C6", x"4182", x"0000"),
+        CJK_REN => (x"0000", x"1060", x"1860", x"0C60", x"0060", x"0060", x"7060", x"1060", x"1060", x"10F0", x"1690", x"1D98", x"1918", x"130C", x"0606", x"0000"),
+        CJK_PIN => (x"0000", x"0800", x"28FE", x"2F30", x"2C30", x"28FE", x"7FC6", x"08D6", x"28D6", x"2BD6", x"6ED6", x"0EF6", x"0C30", x"386C", x"61C6", x"0000"),
+        CJK_BA => (x"0000", x"0000", x"0460", x"0660", x"0420", x"0420", x"0C20", x"0C30", x"0C30", x"0810", x"1818", x"1018", x"300C", x"6006", x"4006", x"0000"),
+        CJK_LU => (x"0000", x"0040", x"3E7C", x"26FC", x"27CC", x"3F78", x"3C30", x"0878", x"29CE", x"2FFE", x"28FC", x"288C", x"2E8C", x"7CFC", x"608C", x"0080"),
+        CJK_YA => (x"0000", x"1FFC", x"3FFC", x"3000", x"30C0", x"30C0", x"30C0", x"37FC", x"37F8", x"30D0", x"30D8", x"20D8", x"20C0", x"6FFC", x"4FFE", x"0000"),
+        CJK_LI => (x"0000", x"0100", x"0100", x"0100", x"0380", x"3FFE", x"0106", x"0304", x"0304", x"0304", x"0204", x"0604", x"0C0C", x"180C", x"7038", x"2000"),
+        CJK_WAN => (x"0000", x"0180", x"7FFE", x"7FFE", x"1248", x"324C", x"6246", x"3FF8", x"3FF8", x"1FF8", x"1FF8", x"1FF8", x"1FFC", x"000C", x"0078", x"0060"),
+        CJK_ROU => (x"0000", x"11FC", x"101C", x"10D0", x"7870", x"33FE", x"10F4", x"11B0", x"3B60", x"7020", x"17FE", x"10F0", x"11E8", x"176E", x"7462", x"0020"),
+        CJK_HUA => (x"0000", x"23F8", x"3308", x"13E8", x"03E8", x"636C", x"7FFE", x"0C02", x"03F8", x"1308", x"33F8", x"2308", x"63F8", x"6308", x"4318", x"0210"),
+        CJK_TA => (x"0000", x"0020", x"3C24", x"65FC", x"64B8", x"64B8", x"3DAC", x"1B66", x"7840", x"7FFC", x"7984", x"79FC", x"79FC", x"7DFC", x"61FC", x"0104"),
+        CJK_BAN => (x"0000", x"1004", x"19FC", x"1980", x"7D80", x"7DFC", x"19FC", x"39CC", x"3D4C", x"7D68", x"5938", x"5938", x"1B38", x"1A6C", x"1EC6", x"1080"),
+        CJK_PU => (x"0000", x"0198", x"2098", x"37FE", x"00D4", x"02D4", x"F2D4", x"37FE", x"3000", x"31FC", x"330C", x"33FC", x"3FFC", x"3B04", x"33FC", x"0104"),
+        CJK_LI2 => (x"0000", x"0180", x"0180", x"7FFE", x"07E0", x"0DB0", x"399E", x"7FF6", x"0FF0", x"01C0", x"0180", x"7FFE", x"0180", x"0180", x"0780", x"0300"),
+        CJK_SA => (x"0000", x"0460", x"7FFE", x"0660", x"0020", x"7C30", x"6DFE", x"68C8", x"6848", x"6DFE", x"6D00", x"6D00", x"7B00", x"6300", x"6600", x"0000"),
+        CJK_RU => (x"0000", x"0800", x"0800", x"183C", x"7F7E", x"1B46", x"1346", x"3246", x"3246", x"3246", x"3E46", x"0E66", x"0F7E", x"3846", x"6040", x"0000"),
+        CJK_XIAO => (x"0000", x"1830", x"0820", x"7F60", x"7F7E", x"364C", x"32CC", x"63CC", x"4668", x"3428", x"1C38", x"0E30", x"1E38", x"70EC", x"6386", x"0100"),
+        CJK_GUO => (x"0000", x"1FF8", x"1FF8", x"1188", x"1FF8", x"1988", x"1188", x"1FF8", x"0180", x"7FFE", x"07E0", x"0DB0", x"199C", x"718E", x"0180", x"0000"),
+        CJK_YUAN => (x"0000", x"0000", x"3FFE", x"30C0", x"3080", x"37FC", x"360C", x"37FC", x"360C", x"37FC", x"30E0", x"3240", x"265C", x"6C46", x"69C0", x"0080"),
+        CJK_SHENG => (x"0000", x"0180", x"3FFE", x"0180", x"0180", x"3FFC", x"0000", x"1FFC", x"118C", x"118C", x"1FFC", x"3FFC", x"3000", x"2000", x"6000", x"0000"),
+        CJK_YAN => (x"0000", x"0018", x"7BFC", x"19A0", x"1020", x"3120", x"313C", x"3930", x"0920", x"4920", x"7920", x"31FC", x"3800", x"6E00", x"63FE", x"0000"),
+        CJK_CHI3 => (x"0000", x"2000", x"31FC", x"1104", x"1104", x"010C", x"71FC", x"7104", x"1320", x"1330", x"1218", x"160C", x"1400", x"3E00", x"63FE", x"0000"),
+        CJK_HE => (x"0000", x"0180", x"0380", x"02C0", x"0660", x"0C30", x"381C", x"6FF6", x"0000", x"1FF0", x"1FF8", x"1818", x"1818", x"1FF8", x"1818", x"1000"),
+        CJK_CHANG => (x"0000", x"01FC", x"01FE", x"7D06", x"6DFE", x"6D06", x"6DFE", x"6C00", x"6FFE", x"6F02", x"7FFE", x"6FFE", x"6302", x"03FE", x"0306", x"0000"),
+        CJK_HUN => (x"0000", x"23F8", x"37F8", x"1E08", x"07F8", x"4608", x"7608", x"17F8", x"0420", x"0624", x"17BC", x"3630", x"2622", x"67A2", x"463E", x"0000"),
+        CJK_XIANG => (x"0000", x"0040", x"00C0", x"7BFE", x"6B06", x"6B06", x"6B76", x"6BD6", x"6BD6", x"6BD6", x"7BD6", x"7B76", x"6B06", x"0306", x"030C", x"0200")
+    );
+
+    function cjk_row(ch : cjk_char_t; row : natural) return std_logic_vector;
+end package;
+
+package body cjk_font_rom is
+    function cjk_row(ch : cjk_char_t; row : natural) return std_logic_vector is
+    begin
+        if row > 15 then
+            return x"0000";
+        end if;
+        return CJK_GLYPHS(ch)(row);
+    end function;
+end package body;

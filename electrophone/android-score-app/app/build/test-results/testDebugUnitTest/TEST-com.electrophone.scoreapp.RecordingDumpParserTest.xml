@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.electrophone.scoreapp.RecordingDumpParserTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-10-26T16:41:48" hostname="DESKTOP-D1KIGFE" time="0.002">
+  <properties/>
+  <testcase name="parsesCompleteDump" classname="com.electrophone.scoreapp.RecordingDumpParserTest" time="0.0"/>
+  <testcase name="rejectsCountMismatch" classname="com.electrophone.scoreapp.RecordingDumpParserTest" time="0.0"/>
+  <testcase name="acceptsEmptyRecording" classname="com.electrophone.scoreapp.RecordingDumpParserTest" time="0.0"/>
+  <testcase name="rejectsInvalidHex" classname="com.electrophone.scoreapp.RecordingDumpParserTest" time="0.0"/>
+  <testcase name="decodesPackedEventToNoteLine" classname="com.electrophone.scoreapp.RecordingDumpParserTest" time="0.0"/>
+  <testcase name="rejectsMoreThan1024Events" classname="com.electrophone.scoreapp.RecordingDumpParserTest" time="0.001"/>
+  <testcase name="rejectsMissingEnd" classname="com.electrophone.scoreapp.RecordingDumpParserTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

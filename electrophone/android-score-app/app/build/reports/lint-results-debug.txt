@@ -1,0 +1,518 @@
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:222: Warning: The vertically scrolling ScrollView should not contain another vertically scrolling widget (ListView) [NestedScrolling]
+                <ListView
+                 ~~~~~~~~
+
+   Explanation for issues of type "NestedScrolling":
+   A scrolling widget such as a ScrollView should not contain any nested
+   scrolling widgets since this has various usability issues
+
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:182: Warning: Use of this function is discouraged because resource reflection makes it harder to perform build optimizations and compile-time verification of code. It is much more efficient to retrieve resources by identifier (e.g. R.foo.bar) than by name (e.g. getIdentifier("bar", "foo", null)). [DiscouragedApi]
+            int buttonId = getResources().getIdentifier(
+                                          ~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:184: Warning: Use of this function is discouraged because resource reflection makes it harder to perform build optimizations and compile-time verification of code. It is much more efficient to retrieve resources by identifier (e.g. R.foo.bar) than by name (e.g. getIdentifier("bar", "foo", null)). [DiscouragedApi]
+            int spinnerId = getResources().getIdentifier(
+                                           ~~~~~~~~~~~~~
+
+   Explanation for issues of type "DiscouragedApi":
+   Discouraged APIs are allowed and are not deprecated, but they may be unfit
+   for common use (e.g. due to slow performance or subtle behavior).
+
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:5: Warning: Possible overdraw: Root element paints background @color/paper with a theme that also paints a background (inferred theme is @style/Theme.ElectrophoneScores) [Overdraw]
+    android:background="@color/paper"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "Overdraw":
+   If you set a background drawable on a root view, then you should use a
+   custom theme where the theme background is null. Otherwise, the theme
+   background will be painted first, only to have your custom background
+   completely cover it; this is called "overdraw".
+
+   NOTE: This detector relies on figuring out which layouts are associated
+   with which activities based on scanning the Java code, and it's currently
+   doing that using an inexact pattern matching algorithm. Therefore, it can
+   incorrectly conclude which activity the layout is associated with and then
+   wrongly complain that a background-theme is hidden.
+
+   If you want your custom background on multiple pages, then you should
+   consider making a custom theme with your custom background and just using
+   that theme instead of a root element background.
+
+   Of course it's possible that your custom drawable is translucent and you
+   want it to be mixed with the background. However, you will get better
+   performance if you pre-mix the background with your drawable and use that
+   resulting image or color as a custom theme background instead.
+
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:485: Warning: activity_main.xml has more than 80 views, bad for performance [TooManyViews]
+                    <Button android:id="@+id/padButton6" android:layout_width="0dp" android:layout_height="82dp" android:layout_columnWeight="1" android:layout_margin="4dp" android:backgroundTint="@color/teal" android:text="琴键7&#10;音6 · 力度20" android:textColor="@color/white" android:textSize="12sp" />
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "TooManyViews":
+   Using too many views in a single layout is bad for performance. Consider
+   using compound drawables or other tricks for reducing the number of views
+   in this layout.
+
+   The maximum view count defaults to 80 but can be configured with the
+   environment variable ANDROID_LINT_MAX_VIEW_COUNT.
+
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:74: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+            <Button
+             ~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:85: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+            <Button
+             ~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:105: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+        <Button
+         ~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:116: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+        <Button
+         ~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:129: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+        <Button
+         ~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:263: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+                    <Button
+                     ~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:274: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+                    <Button
+                     ~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:286: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+                    <Button
+                     ~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:495: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+                    <Button
+                     ~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:506: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+                    <Button
+                     ~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:557: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+                    <Button
+                     ~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:568: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+                    <Button
+                     ~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:580: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+                    <Button
+                     ~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:621: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+                    <Button
+                     ~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:632: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+                    <Button
+                     ~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:644: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+                    <Button
+                     ~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:656: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+                    <Button
+                     ~~~~~~
+
+   Explanation for issues of type "ButtonStyle":
+   Button bars typically use a borderless style for the buttons. Set the
+   style="?android:attr/buttonBarButtonStyle" attribute on each of the
+   buttons, and set style="?android:attr/buttonBarStyle" on the parent layout
+
+   https://d.android.com/r/studio-ui/designer/material/dialogs
+
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:31: Warning: Avoid using sizes smaller than 11sp: 9sp [SmallSp]
+            android:textSize="9sp" />
+            ~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SmallSp":
+   Avoid using sizes smaller than 11sp.
+
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:169: Warning: Missing autofillHints attribute [Autofill]
+                <EditText
+                 ~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:191: Warning: Missing autofillHints attribute [Autofill]
+                <EditText
+                 ~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:601: Warning: Missing autofillHints attribute [Autofill]
+                <EditText
+                 ~~~~~~~~
+
+   Explanation for issues of type "Autofill":
+   Specify an autofillHints attribute when targeting SDK version 26 or higher
+   or explicitly specify that the view is not important for autofill. Your app
+   can help an autofill service classify the data correctly by providing the
+   meaning of each view that could be autofillable, such as views representing
+   usernames, passwords, credit card fields, email addresses, etc.
+
+   The hints can have any value, but it is recommended to use predefined
+   values like 'username' for a username or 'creditCardNumber' for a credit
+   card number. For a list of all predefined autofill hint constants, see the
+   AUTOFILL_HINT_ constants in the View reference at
+   https://developer.android.com/reference/android/view/View.html.
+
+   You can mark a view unimportant for autofill by specifying an
+   importantForAutofill attribute on that view or a parent view. See
+   https://developer.android.com/reference/android/view/View.html#setImportant
+   ForAutofill(int).
+
+   https://developer.android.com/guide/topics/text/autofill.html
+
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:229: Warning: Custom view `Button` has setOnTouchListener called on it but does not override performClick [ClickableViewAccessibility]
+            pad.setOnTouchListener((view, event) -> {
+            ^
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:229: Warning: onTouch lambda should call View#performClick when a click is detected [ClickableViewAccessibility]
+            pad.setOnTouchListener((view, event) -> {
+                                   ^
+
+   Explanation for issues of type "ClickableViewAccessibility":
+   If a View that overrides onTouchEvent or uses an OnTouchListener does not
+   also implement performClick and call it when clicks are detected, the View
+   may not handle accessibility actions properly. Logic handling the click
+   actions should ideally be placed in View#performClick as some accessibility
+   services invoke performClick when a click action should occur.
+
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:363: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                            (url.isEmpty() ? "内置目录" : "在线目录")
+                            ^
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:388: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            catalogStatus.setText("找到 " + visibleEntries.size() + " 首，点击选择");
+                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:393: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        scorePreview.setText("下载后在这里预览 NOTE 内容");
+                             ~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:413: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        statusText.setText("正在下载《" + entry.title + "》");
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:425: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                    statusText.setText("已校验 " + score.noteCount + " 个音符");
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:444: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            statusText.setText("已保存到 " + saved.displayLocation);
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:529: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                    key.label + "\n音" + key.note
+                    ^
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:549: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            statusText.setText("32音测试中不能编辑琴键，请先退出测试模式");
+                               ~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:586: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            statusText.setText("32音测试中不能使用曲谱跟弹，请先退出测试模式");
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:591: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            statusText.setText("请先连接支持曲谱跟弹的 VERSION 3 固件");
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:642: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        followProgress.setText("第 1/" + followSession.getStepCount() + " 组");
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:643: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        followExpected.setText("应弹：" + noteMaskText(step.mask));
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:707: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                followProgress.setText("全部完成 · 共 " + update.stepCount + " 组");
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:716: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            followProgress.setText("第 " + (update.stepIndex + 1)
+                                   ^
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:716: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            followProgress.setText("第 " + (update.stepIndex + 1)
+                                           ~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:718: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            followExpected.setText("应弹：" + noteMaskText(update.expectedMask));
+                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:854: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            statusText.setText("请先连接新版 FPGA 码流后再使用手机琴键");
+                               ~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:930: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            statusText.setText("请先连接 FPGA 后再使用32音测试");
+                               ~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1065: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            protocolStatus.setText("未连接 FPGA");
+                                   ~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1070: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            protocolStatus.setText("FPGA 协议 V3：自由演奏、曲谱跟弹和录音回传可用");
+                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1072: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            protocolStatus.setText("FPGA 协议 V2：手机演奏、实体键映射和录音回传可用");
+                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1074: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            protocolStatus.setText("旧版 FPGA 码流：只能发送曲谱，请烧录新版码流");
+                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1156: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            statusText.setText("请先退出32音测试，再开始录音");
+                               ~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1160: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            statusText.setText("请先连接新版 FPGA 码流");
+                               ~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1185: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            statusText.setText("请先连接新版 FPGA 码流");
+                               ~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1200: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                        "已取回 " + dump.eventCount + " 条事件，可编辑、保存或发送回放");
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1218: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            runOnUiThread(() -> recordingStatus.setText("FPGA 正在回放已录制内容"));
+                                                        ~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1250: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            recordingStatus.setText("录音已保存到 " + saved.displayLocation);
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1283: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                    statusText.setText("FPGA 内录音未删除，仍可点击“回放录音”");
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:29: Warning: Hardcoded string "FPGA REAL-TIME INSTRUMENT", should use @string resource [HardcodedText]
+            android:text="FPGA REAL-TIME INSTRUMENT"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:38: Warning: Hardcoded string "电子琴曲谱", should use @string resource [HardcodedText]
+            android:text="电子琴曲谱"
+            ~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:46: Warning: Hardcoded string "在线曲谱  ·  实时演奏  ·  录音回传", should use @string resource [HardcodedText]
+            android:text="在线曲谱  ·  实时演奏  ·  录音回传"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:63: Warning: Hardcoded string "尚未选择已配对设备", should use @string resource [HardcodedText]
+            android:text="尚未选择已配对设备"
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:81: Warning: Hardcoded string "选择设备", should use @string resource [HardcodedText]
+                android:text="选择设备"
+                ~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:92: Warning: Hardcoded string "连接蓝牙", should use @string resource [HardcodedText]
+                android:text="连接蓝牙"
+                ~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:112: Warning: Hardcoded string "曲谱", should use @string resource [HardcodedText]
+            android:text="曲谱"
+            ~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:125: Warning: Hardcoded string "演奏", should use @string resource [HardcodedText]
+            android:text="演奏"
+            ~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:138: Warning: Hardcoded string "录音", should use @string resource [HardcodedText]
+            android:text="录音"
+            ~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:164: Warning: Hardcoded string "在线曲谱目录", should use @string resource [HardcodedText]
+                    android:text="在线曲谱目录"
+                    ~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:175: Warning: Hardcoded string "留空使用内置目录；也可输入 HTTPS catalog.json", should use @string resource [HardcodedText]
+                    android:hint="留空使用内置目录；也可输入 HTTPS catalog.json"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:187: Warning: Hardcoded string "联网更新曲谱目录", should use @string resource [HardcodedText]
+                    android:text="联网更新曲谱目录"
+                    ~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:197: Warning: Hardcoded string "搜索歌名，例如：小星星、欢乐颂", should use @string resource [HardcodedText]
+                    android:hint="搜索歌名，例如：小星星、欢乐颂"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:209: Warning: Hardcoded string "搜索曲谱", should use @string resource [HardcodedText]
+                    android:text="搜索曲谱"
+                    ~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:218: Warning: Hardcoded string "正在读取目录…", should use @string resource [HardcodedText]
+                    android:text="正在读取目录…"
+                    ~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:237: Warning: Hardcoded string "请选择一首曲谱", should use @string resource [HardcodedText]
+                    android:text="请选择一首曲谱"
+                    ~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:252: Warning: Hardcoded string "下载后在这里预览 NOTE 内容", should use @string resource [HardcodedText]
+                    android:text="下载后在这里预览 NOTE 内容"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:270: Warning: Hardcoded string "下载保存", should use @string resource [HardcodedText]
+                        android:text="下载保存"
+                        ~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:282: Warning: Hardcoded string "复制内容", should use @string resource [HardcodedText]
+                        android:text="复制内容"
+                        ~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:293: Warning: Hardcoded string "蓝牙发送", should use @string resource [HardcodedText]
+                        android:text="蓝牙发送"
+                        ~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:309: Warning: Hardcoded string "演奏模式", should use @string resource [HardcodedText]
+                    android:text="演奏模式"
+                    ~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:327: Warning: Hardcoded string "自由演奏", should use @string resource [HardcodedText]
+                        android:text="自由演奏"
+                        ~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:336: Warning: Hardcoded string "曲谱跟弹", should use @string resource [HardcodedText]
+                        android:text="曲谱跟弹"
+                        ~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:347: Warning: Hardcoded string "进入32音测试", should use @string resource [HardcodedText]
+                    android:text="进入32音测试"
+                    ~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:365: Warning: Hardcoded string "尚未选择曲谱", should use @string resource [HardcodedText]
+                        android:text="尚未选择曲谱"
+                        ~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:375: Warning: Hardcoded string "第 0/0 组", should use @string resource [HardcodedText]
+                        android:text="第 0/0 组"
+                        ~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:384: Warning: Hardcoded string "应弹：--", should use @string resource [HardcodedText]
+                        android:text="应弹：--"
+                        ~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:394: Warning: Hardcoded string "请先选择曲谱", should use @string resource [HardcodedText]
+                        android:text="请先选择曲谱"
+                        ~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:403: Warning: Hardcoded string "实体键映射", should use @string resource [HardcodedText]
+                    android:text="实体键映射"
+                    ~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:412: Warning: Hardcoded string "CH1～CH8 仅控制实体压力键，不影响手机虚拟琴键；设置后点“应用映射”。", should use @string resource [HardcodedText]
+                    android:text="CH1～CH8 仅控制实体压力键，不影响手机虚拟琴键；设置后点“应用映射”。"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:423: Warning: Hardcoded string "CH1", should use @string resource [HardcodedText]
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:orientation="horizontal"><TextView android:layout_width="68dp" android:layout_height="wrap_content" android:text="CH1" android:textColor="@color/ink" android:textStyle="bold" /><Spinner android:id="@+id/mapSpinner0" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" /></LinearLayout>
+                                                                                                                                                                                                                                                 ~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:424: Warning: Hardcoded string "CH2", should use @string resource [HardcodedText]
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:orientation="horizontal"><TextView android:layout_width="68dp" android:layout_height="wrap_content" android:text="CH2" android:textColor="@color/ink" android:textStyle="bold" /><Spinner android:id="@+id/mapSpinner1" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" /></LinearLayout>
+                                                                                                                                                                                                                                                 ~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:425: Warning: Hardcoded string "CH3", should use @string resource [HardcodedText]
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:orientation="horizontal"><TextView android:layout_width="68dp" android:layout_height="wrap_content" android:text="CH3" android:textColor="@color/ink" android:textStyle="bold" /><Spinner android:id="@+id/mapSpinner2" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" /></LinearLayout>
+                                                                                                                                                                                                                                                 ~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:426: Warning: Hardcoded string "CH4", should use @string resource [HardcodedText]
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:orientation="horizontal"><TextView android:layout_width="68dp" android:layout_height="wrap_content" android:text="CH4" android:textColor="@color/ink" android:textStyle="bold" /><Spinner android:id="@+id/mapSpinner3" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" /></LinearLayout>
+                                                                                                                                                                                                                                                 ~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:427: Warning: Hardcoded string "CH5", should use @string resource [HardcodedText]
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:orientation="horizontal"><TextView android:layout_width="68dp" android:layout_height="wrap_content" android:text="CH5" android:textColor="@color/ink" android:textStyle="bold" /><Spinner android:id="@+id/mapSpinner4" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" /></LinearLayout>
+                                                                                                                                                                                                                                                 ~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:428: Warning: Hardcoded string "CH6", should use @string resource [HardcodedText]
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:orientation="horizontal"><TextView android:layout_width="68dp" android:layout_height="wrap_content" android:text="CH6" android:textColor="@color/ink" android:textStyle="bold" /><Spinner android:id="@+id/mapSpinner5" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" /></LinearLayout>
+                                                                                                                                                                                                                                                 ~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:429: Warning: Hardcoded string "CH7", should use @string resource [HardcodedText]
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:orientation="horizontal"><TextView android:layout_width="68dp" android:layout_height="wrap_content" android:text="CH7" android:textColor="@color/ink" android:textStyle="bold" /><Spinner android:id="@+id/mapSpinner6" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" /></LinearLayout>
+                                                                                                                                                                                                                                                 ~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:430: Warning: Hardcoded string "CH8", should use @string resource [HardcodedText]
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:orientation="horizontal"><TextView android:layout_width="68dp" android:layout_height="wrap_content" android:text="CH8" android:textColor="@color/ink" android:textStyle="bold" /><Spinner android:id="@+id/mapSpinner7" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" /></LinearLayout>
+                                                                                                                                                                                                                                                 ~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:439: Warning: Hardcoded string "应用实体键映射", should use @string resource [HardcodedText]
+                    android:text="应用实体键映射"
+                    ~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:447: Warning: Hardcoded string "手机虚拟琴键", should use @string resource [HardcodedText]
+                    android:text="手机虚拟琴键"
+                    ~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:456: Warning: Hardcoded string "演奏时关闭编辑模式；需要修改琴键时先点“编辑琴键”，再点对应琴键。", should use @string resource [HardcodedText]
+                    android:text="演奏时关闭编辑模式；需要修改琴键时先点“编辑琴键”，再点对应琴键。"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:466: Warning: Hardcoded string "编辑琴键", should use @string resource [HardcodedText]
+                    android:text="编辑琴键"
+                    ~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:479: Warning: Hardcoded string "琴键1
+音0 · 力度20", should use @string resource [HardcodedText]
+                    <Button android:id="@+id/padButton0" android:layout_width="0dp" android:layout_height="82dp" android:layout_columnWeight="1" android:layout_margin="4dp" android:backgroundTint="@color/teal" android:text="琴键1&#10;音0 · 力度20" android:textColor="@color/white" android:textSize="12sp" />
+                                                                                                                                                                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:480: Warning: Hardcoded string "琴键2
+音1 · 力度20", should use @string resource [HardcodedText]
+                    <Button android:id="@+id/padButton1" android:layout_width="0dp" android:layout_height="82dp" android:layout_columnWeight="1" android:layout_margin="4dp" android:backgroundTint="@color/teal" android:text="琴键2&#10;音1 · 力度20" android:textColor="@color/white" android:textSize="12sp" />
+                                                                                                                                                                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:481: Warning: Hardcoded string "琴键3
+音2 · 力度20", should use @string resource [HardcodedText]
+                    <Button android:id="@+id/padButton2" android:layout_width="0dp" android:layout_height="82dp" android:layout_columnWeight="1" android:layout_margin="4dp" android:backgroundTint="@color/teal" android:text="琴键3&#10;音2 · 力度20" android:textColor="@color/white" android:textSize="12sp" />
+                                                                                                                                                                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:482: Warning: Hardcoded string "琴键4
+音3 · 力度20", should use @string resource [HardcodedText]
+                    <Button android:id="@+id/padButton3" android:layout_width="0dp" android:layout_height="82dp" android:layout_columnWeight="1" android:layout_margin="4dp" android:backgroundTint="@color/teal" android:text="琴键4&#10;音3 · 力度20" android:textColor="@color/white" android:textSize="12sp" />
+                                                                                                                                                                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:483: Warning: Hardcoded string "琴键5
+音4 · 力度20", should use @string resource [HardcodedText]
+                    <Button android:id="@+id/padButton4" android:layout_width="0dp" android:layout_height="82dp" android:layout_columnWeight="1" android:layout_margin="4dp" android:backgroundTint="@color/teal" android:text="琴键5&#10;音4 · 力度20" android:textColor="@color/white" android:textSize="12sp" />
+                                                                                                                                                                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:484: Warning: Hardcoded string "琴键6
+音5 · 力度20", should use @string resource [HardcodedText]
+                    <Button android:id="@+id/padButton5" android:layout_width="0dp" android:layout_height="82dp" android:layout_columnWeight="1" android:layout_margin="4dp" android:backgroundTint="@color/teal" android:text="琴键6&#10;音5 · 力度20" android:textColor="@color/white" android:textSize="12sp" />
+                                                                                                                                                                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:485: Warning: Hardcoded string "琴键7
+音6 · 力度20", should use @string resource [HardcodedText]
+                    <Button android:id="@+id/padButton6" android:layout_width="0dp" android:layout_height="82dp" android:layout_columnWeight="1" android:layout_margin="4dp" android:backgroundTint="@color/teal" android:text="琴键7&#10;音6 · 力度20" android:textColor="@color/white" android:textSize="12sp" />
+                                                                                                                                                                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:486: Warning: Hardcoded string "琴键8
+音7 · 力度20", should use @string resource [HardcodedText]
+                    <Button android:id="@+id/padButton7" android:layout_width="0dp" android:layout_height="82dp" android:layout_columnWeight="1" android:layout_margin="4dp" android:backgroundTint="@color/teal" android:text="琴键8&#10;音7 · 力度20" android:textColor="@color/white" android:textSize="12sp" />
+                                                                                                                                                                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:502: Warning: Hardcoded string "全部松开", should use @string resource [HardcodedText]
+                        android:text="全部松开"
+                        ~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:513: Warning: Hardcoded string "开始录音", should use @string resource [HardcodedText]
+                        android:text="开始录音"
+                        ~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:523: Warning: Hardcoded string "连接后显示 FPGA 远程控制状态", should use @string resource [HardcodedText]
+                    android:text="连接后显示 FPGA 远程控制状态"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:538: Warning: Hardcoded string "演奏录音", should use @string resource [HardcodedText]
+                    android:text="演奏录音"
+                    ~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:547: Warning: Hardcoded string "开始录音会覆盖 FPGA 中原有录音。停止后自动取回全部事件。", should use @string resource [HardcodedText]
+                    android:text="开始录音会覆盖 FPGA 中原有录音。停止后自动取回全部事件。"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:564: Warning: Hardcoded string "开始录音", should use @string resource [HardcodedText]
+                        android:text="开始录音"
+                        ~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:576: Warning: Hardcoded string "停止并取回", should use @string resource [HardcodedText]
+                        android:text="停止并取回"
+                        ~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:587: Warning: Hardcoded string "回放录音", should use @string resource [HardcodedText]
+                        android:text="回放录音"
+                        ~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:597: Warning: Hardcoded string "尚未取回录音", should use @string resource [HardcodedText]
+                    android:text="尚未取回录音"
+                    ~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:628: Warning: Hardcoded string "保存", should use @string resource [HardcodedText]
+                        android:text="保存"
+                        ~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:640: Warning: Hardcoded string "复制", should use @string resource [HardcodedText]
+                        android:text="复制"
+                        ~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:652: Warning: Hardcoded string "清除", should use @string resource [HardcodedText]
+                        android:text="清除"
+                        ~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:663: Warning: Hardcoded string "发送回放", should use @string resource [HardcodedText]
+                        android:text="发送回放"
+                        ~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:682: Warning: Hardcoded string "准备就绪", should use @string resource [HardcodedText]
+        android:text="准备就绪"
+        ~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "HardcodedText":
+   Hardcoding text attributes directly in layout files is bad for several
+   reasons:
+
+   * When creating configuration variations (for example for landscape or
+   portrait) you have to repeat the actual text (and keep it up to date when
+   making changes)
+
+   * The application cannot be translated to other languages by just adding
+   new translations for existing string resources.
+
+   There are quickfixes to automatically extract this hardcoded string into a
+   resource lookup.
+
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:121: Warning: Consider replacing android:layout_marginRight with android:layout_marginEnd="4dp" to better support right-to-left layouts [RtlHardcoded]
+            android:layout_marginRight="4dp"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:134: Warning: Consider replacing android:layout_marginRight with android:layout_marginEnd="4dp" to better support right-to-left layouts [RtlHardcoded]
+            android:layout_marginRight="4dp"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:290: Warning: Consider replacing android:layout_marginLeft with android:layout_marginStart="3dp" to better support right-to-left layouts [RtlHardcoded]
+                        android:layout_marginLeft="3dp"
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:584: Warning: Consider replacing android:layout_marginLeft with android:layout_marginStart="3dp" to better support right-to-left layouts [RtlHardcoded]
+                        android:layout_marginLeft="3dp"
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\activity_main.xml:660: Warning: Consider replacing android:layout_marginLeft with android:layout_marginStart="3dp" to better support right-to-left layouts [RtlHardcoded]
+                        android:layout_marginLeft="3dp"
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "RtlHardcoded":
+   Using Gravity#LEFT and Gravity#RIGHT can lead to problems when a layout is
+   rendered in locales where text flows from right to left. Use Gravity#START
+   and Gravity#END instead. Similarly, in XML gravity and layout_gravity
+   attributes, use start rather than left.
+
+   For XML attributes such as paddingLeft and layout_marginLeft, use
+   paddingStart and layout_marginStart. NOTE: If your minSdkVersion is less
+   than 17, you should add both the older left/right attributes as well as the
+   new start/end attributes. On older platforms, where RTL is not supported
+   and the start/end attributes are unknown and therefore ignored, you need
+   the older left/right attributes. There is a separate lint check which
+   catches that type of error.
+
+   (Note: For Gravity#LEFT and Gravity#START, you can use these constants even
+   when targeting older platforms, because the start bitmask is a superset of
+   the left bitmask. Therefore, you can use gravity="start" rather than
+   gravity="left|start".)
+
+0 errors, 126 warnings

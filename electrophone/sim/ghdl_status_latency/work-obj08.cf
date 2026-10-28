@@ -1,0 +1,105 @@
+v 4
+file / "D:\Gowin\WorkSpace\1-1\electrophone\sim\tb_input_latency.vhd" "9ffd0171cd573bb07337e51dfd0b898e9b922348" "20261028095416.217":
+  entity tb_input_latency at 1( 0) + 0 on 93;
+  architecture sim of tb_input_latency at 11( 273) + 0 on 94;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\score_recorder.vhd" "24342d4037081b7aa8fb44e2dac8739002c92f17" "20261028095416.116":
+  entity score_recorder at 1( 0) + 0 on 89;
+  architecture rtl of score_recorder at 32( 970) + 0 on 90;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\event_uploader.vhd" "34933f4ddf44a9a2045f315e0e8d70b77b2f4a0e" "20261028095416.044":
+  entity event_uploader at 1( 0) + 0 on 85;
+  architecture rtl of event_uploader at 24( 720) + 0 on 86;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\remote_input.vhd" "cf5488c697e7dcc3719d8548a49be4a87d9b2e0c" "20261028095415.968":
+  entity remote_input at 1( 0) + 0 on 81;
+  architecture rtl of remote_input at 29( 872) + 0 on 82;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\score_event_ram.vhd" "91f8adac26a51f1deab00d9ba80740ed64480268" "20261028095415.903":
+  entity score_event_ram at 1( 0) + 0 on 77;
+  architecture rtl of score_event_ram at 27( 918) + 0 on 78;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\uart_rx.vhd" "316e41c4586d2cb22f6ab5306edcb7ebfad823f8" "20261028095415.842":
+  entity uart_rx at 1( 0) + 0 on 73;
+  architecture rtl of uart_rx at 20( 493) + 0 on 74;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\effects_delay_ram.vhd" "b50d706e8f544bbc8962cbbb50a8255eb930597e" "20261028095415.775":
+  entity effects_delay_ram at 1( 0) + 0 on 69;
+  architecture rtl of effects_delay_ram at 17( 471) + 0 on 70;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\lissajous_bitmap_ram.vhd" "34cf22a3c25cef1218d06f399c107e23ff6dfb2a" "20261028095415.706":
+  entity lissajous_bitmap_ram at 1( 0) + 0 on 65;
+  architecture rtl of lissajous_bitmap_ram at 18( 451) + 0 on 66;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\color_ui_renderer.vhd" "181b5cd62e77ca4120ac9d604b99a65014d59047" "20261028095415.643":
+  entity color_ui_renderer at 1( 0) + 0 on 61;
+  architecture rtl of color_ui_renderer at 30( 986) + 0 on 62;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\audio_scope.vhd" "117bb7f579d96f02470c8c05c2ca2b8d1b2f5ee4" "20261028095415.582":
+  entity audio_scope at 1( 0) + 0 on 57;
+  architecture rtl of audio_scope at 19( 581) + 0 on 58;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\i2s_transmitter.vhd" "7d11fe71e3e7598a75d87e0988ced6fdfd5d36e9" "20261028095415.520":
+  entity i2s_transmitter at 1( 0) + 0 on 53;
+  architecture rtl of i2s_transmitter at 20( 489) + 0 on 54;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\mcp3008_reader.vhd" "2d72dc1a9568e8260faaad332b33e96c157f5d10" "20261028095415.463":
+  entity mcp3008_reader at 1( 0) + 0 on 49;
+  architecture rtl of mcp3008_reader at 24( 648) + 0 on 50;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\ec11_decoder.vhd" "e73c525bb114925d742cac0ffd9513ec6687b4bc" "20261028095415.406":
+  entity ec11_decoder at 1( 0) + 0 on 45;
+  architecture rtl of ec11_decoder at 21( 639) + 0 on 46;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\voice_state_ram.vhd" "4dfc69cbf6841231648cf24113d83784fe0d0d6a" "20261028095415.353":
+  entity voice_state_ram at 1( 0) + 0 on 41;
+  architecture rtl of voice_state_ram at 17( 420) + 0 on 42;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\spectrum_analyzer.vhd" "da326a3e41218d970167b84179d7b58f3fa8a460" "20261028095415.295":
+  entity spectrum_analyzer at 1( 0) + 0 on 37;
+  architecture rtl of spectrum_analyzer at 21( 618) + 0 on 38;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\spectrum_capture_ram.vhd" "eee9e46d8719992333adb512767d38bade294f23" "20261028095415.212":
+  entity spectrum_capture_ram at 1( 0) + 0 on 33;
+  architecture rtl of spectrum_capture_ram at 18( 513) + 0 on 34;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\pitch_lut.vhd" "6c87d474669d9d77417be07215ed395dd0ac4311" "20261028095415.129":
+  package pitch_lut at 1( 0) + 0 on 29 body;
+  package body pitch_lut at 66( 5371) + 0 on 30;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\ui_types.vhd" "42bd512d1a69833052fec80c5c2c4fe8628d9412" "20261028095415.069":
+  package ui_types at 1( 0) + 0 on 26;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\ui_layout.vhd" "4afcf5d9526a3fbfd421f9b4d0c4196ec8e61205" "20261028095415.099":
+  package ui_layout at 1( 0) + 0 on 27 body;
+  package body ui_layout at 56( 1813) + 0 on 28;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\spectrum_tables.vhd" "ecad23f2f130de5f22ff2ceb95104b671acdb16e" "20261028095415.170":
+  package spectrum_tables at 1( 0) + 0 on 31 body;
+  package body spectrum_tables at 533( 94333) + 0 on 32;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\spectrum_work_ram.vhd" "b9bf8cb0404862753e104d39d08ad0115a651be0" "20261028095415.251":
+  entity spectrum_work_ram at 1( 0) + 0 on 35;
+  architecture rtl of spectrum_work_ram at 18( 536) + 0 on 36;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\voice_allocator.vhd" "4411cabed4022e299a87f248dfab87fb54c7f3e0" "20261028095415.324":
+  entity voice_allocator at 1( 0) + 0 on 39;
+  architecture rtl of voice_allocator at 24( 838) + 0 on 40;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\cjk_font_rom.vhd" "557b12fd70124922c6807ee05e2e3c383f72e1bf" "20261028095415.379":
+  package cjk_font_rom at 1( 0) + 0 on 43 body;
+  package body cjk_font_rom at 140( 11657) + 0 on 44;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\ui_controller.vhd" "082f0aed7b748d620a195a9ef1f9df57316f2189" "20261028095415.435":
+  entity ui_controller at 1( 0) + 0 on 47;
+  architecture rtl of ui_controller at 38( 1480) + 0 on 48;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\sensor_scanner.vhd" "7e1805ba15be9b064bb6a69072f4dfde6381b67f" "20261028095415.493":
+  entity sensor_scanner at 1( 0) + 0 on 51;
+  architecture rtl of sensor_scanner at 26( 812) + 0 on 52;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\synth_engine.vhd" "db4ce4ba0426060ba03d5b75d98d848fd834b836" "20261028095415.552":
+  entity synth_engine at 1( 0) + 0 on 55;
+  architecture rtl of synth_engine at 30( 955) + 0 on 56;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\wave_preview.vhd" "7fbb7e724d9f40184a84e583401381706ba556bb" "20261028095415.612":
+  entity wave_preview at 1( 0) + 0 on 59;
+  architecture rtl of wave_preview at 26( 818) + 0 on 60;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\st7796s_display.vhd" "8ce32e19572b114364ea881ae6ad171b53f6f966" "20261028095415.677":
+  entity st7796s_display at 1( 0) + 0 on 63;
+  architecture rtl of st7796s_display at 31( 1123) + 0 on 64;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\lissajous_scope.vhd" "b53827cc8e5d8c7ea510c54fde8423c06fdb8cb7" "20261028095415.742":
+  entity lissajous_scope at 1( 0) + 0 on 67;
+  architecture rtl of lissajous_scope at 18( 458) + 0 on 68;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\audio_effects.vhd" "827e89f7bb07078554b93927d0fe9765aa5c6291" "20261028095415.812":
+  entity audio_effects at 1( 0) + 0 on 71;
+  architecture rtl of audio_effects at 17( 420) + 0 on 72;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\uart_tx.vhd" "8f3d0d58617173fb5c4f86f0c04d9ec6ac3debf8" "20261028095415.873":
+  entity uart_tx at 1( 0) + 0 on 75;
+  architecture rtl of uart_tx at 19( 455) + 0 on 76;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\command_parser.vhd" "39701def794ad8754b447e24fa0dd3accd3329ed" "20261028095415.934":
+  entity command_parser at 1( 0) + 0 on 79;
+  architecture rtl of command_parser at 48( 1519) + 0 on 80;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\performance_mixer.vhd" "6f6cde7df2b1ded7ab86173768c8389452c9205c" "20261028095416.002":
+  entity performance_mixer at 1( 0) + 0 on 83;
+  architecture rtl of performance_mixer at 36( 1248) + 0 on 84;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\score_sequencer.vhd" "cbf8dd0668320e975824ddea89b6016ec980e0ec" "20261028095416.083":
+  entity score_sequencer at 1( 0) + 0 on 87;
+  architecture rtl of score_sequencer at 28( 848) + 0 on 88;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\electrophone.vhd" "20112f34ee74c66011bb388bd5843cba5c85939a" "20261028095416.178":
+  entity electrophone at 1( 0) + 0 on 91;
+  architecture rtl of electrophone at 73( 2599) + 0 on 92;

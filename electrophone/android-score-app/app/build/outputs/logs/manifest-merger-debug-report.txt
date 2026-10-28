@@ -1,0 +1,77 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:2:1-31:12
+	package
+		INJECTED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:4:22-64
+uses-permission#android.permission.BLUETOOTH
+ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:5:5-7:38
+	android:maxSdkVersion
+		ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:7:9-35
+	android:name
+		ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:6:9-52
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:8:5-10:38
+	android:maxSdkVersion
+		ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:10:9-35
+	android:name
+		ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:9:9-58
+uses-permission#android.permission.BLUETOOTH_CONNECT
+ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:11:5-76
+	android:name
+		ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:11:22-73
+application
+ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:13:5-29:19
+INJECTED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:13:5-29:19
+	android:extractNativeLibs
+		INJECTED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml
+	android:supportsRtl
+		ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:18:9-35
+	android:label
+		ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:16:9-41
+	android:roundIcon
+		ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:17:9-50
+	android:icon
+		ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:15:9-45
+	android:allowBackup
+		ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:14:9-35
+	android:theme
+		ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:19:9-56
+	android:usesCleartextTraffic
+		ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:20:9-45
+activity#com.electrophone.scoreapp.MainActivity
+ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:21:9-28:20
+	android:exported
+		ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:23:13-36
+	android:name
+		ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:22:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:24:13-27:29
+action#android.intent.action.MAIN
+ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:25:17-69
+	android:name
+		ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:25:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:26:17-77
+	android:name
+		ADDED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml:26:27-74
+uses-sdk
+INJECTED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml
+INJECTED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\AndroidManifest.xml

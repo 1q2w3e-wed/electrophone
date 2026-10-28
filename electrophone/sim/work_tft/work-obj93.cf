@@ -1,0 +1,33 @@
+v 4
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "sim/tb_xpt2046_touch.vhd" "215190427574877f360ce2e72ebad3ca1c427212" "20261020120052.839":
+  entity tb_xpt2046_touch at 1( 0) + 0 on 51;
+  architecture sim of tb_xpt2046_touch at 7( 84) + 0 on 52;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "sim/tb_touch_menu_ui.vhd" "d8cca6f6d0e3c3d3471689830bc746a6051f2568" "20261020120052.837":
+  entity tb_touch_menu_ui at 1( 0) + 0 on 47;
+  architecture sim of tb_touch_menu_ui at 8( 107) + 0 on 48;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src/ui_types.vhd" "545830e3016a75298c22c774716788da84cc5e0c" "20261020120052.801":
+  package ui_types at 1( 0) + 0 on 32;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src/ui_layout.vhd" "add1caafcde0e4d6d356e9717585f4ecf6c4b8e2" "20261020120052.802":
+  package ui_layout at 1( 0) + 0 on 33 body;
+  package body ui_layout at 80( 2892) + 0 on 34;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src/ec11_decoder.vhd" "e73c525bb114925d742cac0ffd9513ec6687b4bc" "20261020120052.802":
+  entity ec11_decoder at 1( 0) + 0 on 35;
+  architecture rtl of ec11_decoder at 21( 639) + 0 on 36;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src/xpt2046_touch.vhd" "04fd23ee9495d68d21aa354ce8de15a5f7689dca" "20261020120052.803":
+  entity xpt2046_touch at 1( 0) + 0 on 37;
+  architecture rtl of xpt2046_touch at 33( 1195) + 0 on 38;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src/touch_menu_ui.vhd" "419e43b57ea0a4e15bf8c2433fd8a904b048d8e5" "20261020120052.804":
+  entity touch_menu_ui at 1( 0) + 0 on 39;
+  architecture rtl of touch_menu_ui at 34( 1244) + 0 on 40;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src/color_ui_renderer.vhd" "363117c456a9f2b27a54fdb2498ecd0c88c49f8a" "20261020120052.805":
+  entity color_ui_renderer at 1( 0) + 0 on 41;
+  architecture rtl of color_ui_renderer at 20( 620) + 0 on 42;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src/st7796s_display.vhd" "ca39a46b23db51111ab5b8f09cabd6a65dbd19b9" "20261020120052.805":
+  entity st7796s_display at 1( 0) + 0 on 43;
+  architecture rtl of st7796s_display at 27( 934) + 0 on 44;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src/electrophone.vhd" "ec667b2c2af09bfaa9ddc77de300f7f9b46b120a" "20261020120052.806":
+  entity electrophone at 1( 0) + 0 on 45;
+  architecture rtl of electrophone at 60( 2491) + 0 on 46;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "sim/tb_st7796s_display.vhd" "5a77316dc5757d334cd4eea932b53e16a5c14451" "20261020120052.838":
+  entity tb_st7796s_display at 1( 0) + 0 on 49;
+  architecture sim of tb_st7796s_display at 7( 86) + 0 on 50;

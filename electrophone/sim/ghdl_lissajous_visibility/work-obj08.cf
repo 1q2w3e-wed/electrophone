@@ -1,0 +1,10 @@
+v 4
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\lissajous_bitmap_ram.vhd" "34cf22a3c25cef1218d06f399c107e23ff6dfb2a" "20261026153610.891":
+  entity lissajous_bitmap_ram at 1( 0) + 0 on 23;
+  architecture rtl of lissajous_bitmap_ram at 18( 451) + 0 on 24;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\lissajous_scope.vhd" "b53827cc8e5d8c7ea510c54fde8423c06fdb8cb7" "20261026154132.544":
+  entity lissajous_scope at 1( 0) + 0 on 29;
+  architecture rtl of lissajous_scope at 18( 458) + 0 on 30;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "sim\tb_lissajous_scope.vhd" "76060f127ec58f220f8d644f2ace72fb6f67509b" "20261026154132.546":
+  entity tb_lissajous_scope at 1( 0) + 0 on 31;
+  architecture sim of tb_lissajous_scope at 9( 136) + 0 on 32;

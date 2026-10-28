@@ -1,0 +1,16 @@
+v 4
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "sim\tb_parser_uart.vhd" "db57c09e88c1c384f85bae516e09a59b7b3a1ec2" "20261026160337.245":
+  entity tb_parser_uart at 1( 0) + 0 on 19;
+  architecture sim of tb_parser_uart at 9( 125) + 0 on 20;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "sim\tb_command_parser.vhd" "b07acb06ba532b37df4583a61923bf5518c1c6c6" "20261026160337.245":
+  entity tb_command_parser at 1( 0) + 0 on 17;
+  architecture sim of tb_command_parser at 9( 128) + 0 on 18;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\command_parser.vhd" "39701def794ad8754b447e24fa0dd3accd3329ed" "20261026160337.243":
+  entity command_parser at 1( 0) + 0 on 15;
+  architecture rtl of command_parser at 48( 1519) + 0 on 16;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\uart_tx.vhd" "8f3d0d58617173fb5c4f86f0c04d9ec6ac3debf8" "20261026160337.242":
+  entity uart_tx at 1( 0) + 0 on 13;
+  architecture rtl of uart_tx at 19( 455) + 0 on 14;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\uart_rx.vhd" "316e41c4586d2cb22f6ab5306edcb7ebfad823f8" "20261026160337.241":
+  entity uart_rx at 1( 0) + 0 on 11;
+  architecture rtl of uart_rx at 20( 493) + 0 on 12;

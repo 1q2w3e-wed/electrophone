@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.7.3" type="partial_results">
+    <map id="UnsafeImplicitIntentLaunch">
+            <map id="actionsSent">
+                    <map id="android.bluetooth.adapter.action.REQUEST_ENABLE (used to start an activity)">
+                        <location id="0"
+                            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/electrophone/scoreapp/MainActivity.java"
+                            line="1088"
+                            column="27"
+                            startOffset="42295"
+                            endLine="1088"
+                            endColumn="77"
+                            endOffset="42345"/>
+                    </map>
+                    <map id="android.settings.BLUETOOTH_SETTINGS (used to start an activity)">
+                        <location id="0"
+                            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/electrophone/scoreapp/MainActivity.java"
+                            line="1098"
+                            column="43"
+                            startOffset="42796"
+                            endLine="1098"
+                            endColumn="89"
+                            endOffset="42842"/>
+                    </map>
+            </map>
+    </map>
+    <map id="UnsafeIntentLaunch">
+            <map id="unprotected">
+                <entry
+                    name="com.electrophone.scoreapp.MainActivity"
+                    boolean="true"/>
+            </map>
+    </map>
+    <map id="UnusedResources">
+        <entry
+            name="model"
+            string="color[soft_blue(U),line(U),navy_dark(U),white(U),paper(U),header_text_secondary(U),navy(U),teal(U),blue(U),muted(U),ink(U),danger(U)],drawable[ic_launcher(U),editor_background(U),header_background(U),panel_background(U),status_background(U),tab_bar_background(U)],id[deviceText(U),selectDeviceButton(U),connectDeviceButton(U),tabScoresButton(U),tabPerformanceButton(U),tabRecordingButton(U),scoresPage(U),catalogUrlInput(U),loadCatalogButton(U),searchInput(U),searchButton(U),catalogStatus(U),resultList(U),selectedTitle(U),scorePreview(U),downloadButton(U),copyButton(U),sendButton(U),performancePage(U),performanceModeGroup(U),freePlayRadio(U),followScoreRadio(U),testModeButton(U),followGuidePanel(U),followTitle(U),followProgress(U),followExpected(U),followFeedback(U),mapSpinner0(D),mapSpinner1(D),mapSpinner2(D),mapSpinner3(D),mapSpinner4(D),mapSpinner5(D),mapSpinner6(D),mapSpinner7(D),applyMappingButton(U),editKeysButton(U),remotePadGrid(U),padButton0(D),padButton1(D),padButton2(D),padButton3(D),padButton4(D),padButton5(D),padButton6(D),padButton7(D),allUpButton(U),performanceRecordButton(U),protocolStatus(U),recordingPage(U),startRecordingButton(U),stopAndFetchButton(U),replayRecordingButton(U),recordingStatus(U),recordingText(U),saveRecordingButton(U),copyRecordingButton(U),clearRecordingButton(U),sendRecordingButton(U),statusText(U)],layout[activity_main(U)],string[app_name(U)],style[Theme_ElectrophoneScores(U),Widget_Electrophone_Button(U)];d^0^1,e^2,f^3^1,10^0^1,11^0^1,4f^4^e^5^3^f^6^7^11^8^d^9^1^a^10,51^52^2^8^4;;;"/>
+    </map>
+
+</incidents>

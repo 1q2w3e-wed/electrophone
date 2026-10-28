@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue">#155EEF</color>
+    <color name="danger">#C62828</color>
+    <color name="header_text_secondary">#C9DDF7</color>
+    <color name="ink">#14233B</color>
+    <color name="line">#D7E3F1</color>
+    <color name="muted">#687B94</color>
+    <color name="navy">#0B2447</color>
+    <color name="navy_dark">#06152B</color>
+    <color name="paper">#F3F7FC</color>
+    <color name="soft_blue">#EAF3FF</color>
+    <color name="teal">#078CA8</color>
+    <color name="white">#FFFFFF</color>
+    <string name="app_name">电子琴曲谱</string>
+    <style name="Theme.ElectrophoneScores" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:buttonStyle">@style/Widget.Electrophone.Button</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@color/navy_dark</item>
+        <item name="android:navigationBarColor">@color/navy_dark</item>
+        <item name="android:colorAccent">@color/blue</item>
+        <item name="android:windowBackground">@color/paper</item>
+    </style>
+    <style name="Widget.Electrophone.Button" parent="android:style/Widget.Material.Button">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:elevation">1dp</item>
+    </style>
+</resources>

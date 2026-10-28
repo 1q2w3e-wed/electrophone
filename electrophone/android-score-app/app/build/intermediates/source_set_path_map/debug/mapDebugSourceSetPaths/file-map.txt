@@ -1,0 +1,7 @@
+com.electrophone.scoreapp-pngs-0 D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\build\generated\res\pngs\debug
+com.electrophone.scoreapp-resValues-1 D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\build\generated\res\resValues\debug
+com.electrophone.scoreapp-packageDebugResources-2 D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.electrophone.scoreapp-packageDebugResources-3 D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.electrophone.scoreapp-debug-4 D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.electrophone.scoreapp-debug-5 D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\debug\res
+com.electrophone.scoreapp-main-6 D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res

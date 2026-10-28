@@ -1,0 +1,45 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW5A-25A" pn="GW5A-LV25MG121NC1/I0">gw5a25a-002</Device>
+    <FileList>
+        <File path="src/ui_types.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/ui_layout.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/pitch_lut.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/spectrum_tables.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/spectrum_capture_ram.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/spectrum_work_ram.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/spectrum_analyzer.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/voice_allocator.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/voice_state_ram.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/cjk_font_rom.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/ec11_decoder.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/ui_controller.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/mcp3008_reader.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/sensor_scanner.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/i2s_transmitter.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/synth_engine.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/audio_scope.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/wave_preview.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/color_ui_renderer.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/st7796s_display.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/lissajous_bitmap_ram.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/lissajous_scope.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/effects_delay_ram.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/audio_effects.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/uart_rx.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/uart_tx.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/score_event_ram.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/command_parser.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/remote_input.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/performance_mixer.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/event_uploader.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/score_sequencer.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/score_recorder.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/electrophone.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/electrophone.cst" type="file.cst" enable="1"/>
+        <File path="src/electrophone.sdc" type="file.sdc" enable="1"/>
+    </FileList>
+</Project>

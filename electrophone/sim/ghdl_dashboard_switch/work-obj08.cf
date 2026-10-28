@@ -1,0 +1,33 @@
+v 4
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "sim\tb_volume_bar.vhd" "caccad83e399865de733aab2ccd5659562d2de62" "20261026135550.038":
+  entity tb_volume_bar at 1( 0) + 0 on 30;
+  architecture sim of tb_volume_bar at 10( 154) + 0 on 31;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "sim\tb_dashboard.vhd" "08a6da3cc49bc2780f9abf780005155a7e9c6a3c" "20261026140646.999":
+  entity tb_dashboard at 1( 0) + 0 on 38;
+  architecture sim of tb_dashboard at 12( 197) + 0 on 39;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\color_ui_renderer.vhd" "1bd1877163e3b4461faaa1529a39e0d6cdde119c" "20261026140555.463":
+  entity color_ui_renderer at 1( 0) + 0 on 34;
+  architecture rtl of color_ui_renderer at 30( 986) + 0 on 35;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\wave_preview.vhd" "12d381c5dfab9327b8644b00c901c18d12ef725a" "20261026140555.460":
+  entity wave_preview at 1( 0) + 0 on 32;
+  architecture rtl of wave_preview at 26( 818) + 0 on 33;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\spectrum_analyzer.vhd" "dd8fce8f2c7d3597b2a6cdc46754cdb1d2b0bb83" "20261026135550.034":
+  entity spectrum_analyzer at 1( 0) + 0 on 22;
+  architecture rtl of spectrum_analyzer at 20( 584) + 0 on 23;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\spectrum_work_ram.vhd" "b9bf8cb0404862753e104d39d08ad0115a651be0" "20261026135550.033":
+  entity spectrum_work_ram at 1( 0) + 0 on 20;
+  architecture rtl of spectrum_work_ram at 18( 536) + 0 on 21;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\spectrum_capture_ram.vhd" "eee9e46d8719992333adb512767d38bade294f23" "20261026135550.033":
+  entity spectrum_capture_ram at 1( 0) + 0 on 18;
+  architecture rtl of spectrum_capture_ram at 18( 513) + 0 on 19;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\spectrum_tables.vhd" "ecad23f2f130de5f22ff2ceb95104b671acdb16e" "20261026135550.033":
+  package spectrum_tables at 1( 0) + 0 on 16 body;
+  package body spectrum_tables at 533( 94333) + 0 on 17;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\cjk_font_rom.vhd" "2e1f022ea65fe8e8123de851f180b98b8d2e35f4" "20261026135550.022":
+  package cjk_font_rom at 1( 0) + 0 on 14 body;
+  package body cjk_font_rom at 138( 11473) + 0 on 15;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\ui_layout.vhd" "4afcf5d9526a3fbfd421f9b4d0c4196ec8e61205" "20261026135550.021":
+  package ui_layout at 1( 0) + 0 on 12 body;
+  package body ui_layout at 56( 1813) + 0 on 13;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\ui_types.vhd" "0560797caf575c73bac5031a7175854b315a018f" "20261026135550.021":
+  package ui_types at 1( 0) + 0 on 11;

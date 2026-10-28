@@ -1,0 +1,118 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.electrophone.scoreapp-mergeDebugResources-2:/values/values.xml",
+            "map": [
+                {
+                    "source": "D:\\Gowin\\WorkSpace\\1-1\\electrophone\\android-score-app\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "-1",
+                        "startColumns": "-1",
+                        "startOffsets": "-1"
+                    },
+                    "to": {
+                        "startLines": "14",
+                        "startColumns": "4",
+                        "startOffsets": "554",
+                        "endColumns": "42",
+                        "endOffsets": "592"
+                    }
+                },
+                {
+                    "source": "D:\\Gowin\\WorkSpace\\1-1\\electrophone\\android-score-app\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "4,12,11,7,9,8,2,3,6,10,5,-1",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,-1",
+                        "startOffsets": "138,473,417,256,334,294,55,94,216,373,177,-1",
+                        "endColumns": "38,40,55,37,38,39,38,43,39,43,38,-1",
+                        "endOffsets": "172,509,468,289,368,329,89,133,251,412,211,-1"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,94,135,191,229,268,308,347,391,431,475,514",
+                        "endColumns": "38,40,55,37,38,39,38,43,39,43,38,39",
+                        "endOffsets": "89,130,186,224,263,303,342,386,426,470,509,549"
+                    }
+                },
+                {
+                    "source": "D:\\Gowin\\WorkSpace\\1-1\\electrophone\\android-score-app\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "2,12",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,638",
+                        "endLines": "10,17",
+                        "endColumns": "12,12",
+                        "endOffsets": "632,959"
+                    },
+                    "to": {
+                        "startLines": "15,24",
+                        "startColumns": "4,4",
+                        "startOffsets": "597,1179",
+                        "endLines": "23,29",
+                        "endColumns": "12,12",
+                        "endOffsets": "1174,1500"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\Administrator\\.gradle\\daemon\\8.9\\com.electrophone.scoreapp-mergeDebugResources-2:\\values\\values.xml",
+            "map": [
+                {
+                    "source": "D:\\Gowin\\WorkSpace\\1-1\\electrophone\\android-score-app\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "42",
+                        "endOffsets": "93"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "374",
+                        "endColumns": "42",
+                        "endOffsets": "412"
+                    }
+                },
+                {
+                    "source": "D:\\Gowin\\WorkSpace\\1-1\\electrophone\\android-score-app\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "6,8,7,2,3,5,4,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "217,295,255,55,94,177,138,334",
+                        "endColumns": "37,38,39,38,43,39,38,39",
+                        "endOffsets": "250,329,290,89,133,212,172,369"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,93,132,172,211,255,295,334",
+                        "endColumns": "37,38,39,38,43,39,38,39",
+                        "endOffsets": "88,127,167,206,250,290,329,369"
+                    }
+                },
+                {
+                    "source": "D:\\Gowin\\WorkSpace\\1-1\\electrophone\\android-score-app\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "544"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "417",
+                        "endLines": "18",
+                        "endColumns": "12",
+                        "endOffsets": "906"
+                    }
+                }
+            ]
+        }
+    ]
+}

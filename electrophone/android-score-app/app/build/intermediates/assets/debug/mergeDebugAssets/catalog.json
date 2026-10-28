@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "scores": [
+    {
+      "title": "小星星",
+      "aliases": ["Twinkle Twinkle Little Star", "一闪一闪亮晶晶"],
+      "file": "scores/小星星.txt",
+      "tags": ["儿歌", "入门"]
+    },
+    {
+      "title": "两只老虎",
+      "aliases": ["Frère Jacques", "Are You Sleeping"],
+      "file": "scores/两只老虎.txt",
+      "tags": ["儿歌", "入门"]
+    },
+    {
+      "title": "欢乐颂",
+      "aliases": ["Ode to Joy", "贝多芬"],
+      "file": "scores/欢乐颂.txt",
+      "tags": ["古典", "入门"]
+    },
+    {
+      "title": "玛丽有只小羊羔",
+      "aliases": ["Mary Had a Little Lamb"],
+      "file": "scores/玛丽有只小羊羔.txt",
+      "tags": ["儿歌", "入门"]
+    },
+    {
+      "title": "伦敦桥",
+      "aliases": ["London Bridge"],
+      "file": "scores/伦敦桥.txt",
+      "tags": ["儿歌", "入门"]
+    },
+    {
+      "title": "划船歌",
+      "aliases": ["Row Row Row Your Boat"],
+      "file": "scores/划船歌.txt",
+      "tags": ["儿歌", "入门"]
+    },
+    {
+      "title": "得吃小曲",
+      "aliases": ["原创小曲"],
+      "file": "scores/得吃小曲.txt",
+      "tags": ["原创", "练习"]
+    }
+  ]
+}

@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/paper"
+    android:fontFamily="sans-serif"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingTop="14dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_background"
+        android:elevation="4dp"
+        android:orientation="vertical"
+        android:paddingLeft="18dp"
+        android:paddingTop="15dp"
+        android:paddingRight="18dp"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.12"
+            android:text="FPGA REAL-TIME INSTRUMENT"
+            android:textColor="@color/header_text_secondary"
+            android:textSize="9sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="电子琴曲谱"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="在线曲谱  ·  实时演奏  ·  录音回传"
+            android:textColor="@color/header_text_secondary"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/panel_background"
+        android:elevation="2dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/deviceText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="尚未选择已配对设备"
+            android:textColor="@color/navy"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/selectDeviceButton"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/navy"
+                android:text="选择设备"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/connectDeviceButton"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/teal"
+                android:text="连接蓝牙"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/tab_bar_background"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/tabScoresButton"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/navy"
+            android:text="曲谱"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/tabPerformanceButton"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:text="演奏"
+            android:textColor="@color/blue"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/tabRecordingButton"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:text="录音"
+            android:textColor="@color/blue"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/scoresPage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="在线曲谱目录"
+                    android:textColor="@color/navy"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/catalogUrlInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/editor_background"
+                    android:hint="留空使用内置目录；也可输入 HTTPS catalog.json"
+                    android:inputType="textUri"
+                    android:maxLines="1"
+                    android:padding="10dp"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/loadCatalogButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="6dp"
+                    android:backgroundTint="@color/navy"
+                    android:text="联网更新曲谱目录"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/searchInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/editor_background"
+                    android:hint="搜索歌名，例如：小星星、欢乐颂"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:padding="10dp"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/searchButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="6dp"
+                    android:backgroundTint="@color/teal"
+                    android:text="搜索曲谱"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/catalogStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="正在读取目录…"
+                    android:textColor="@color/muted"
+                    android:textSize="12sp" />
+
+                <ListView
+                    android:id="@+id/resultList"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/panel_background"
+                    android:divider="@color/line"
+                    android:dividerHeight="1dp"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/selectedTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="请选择一首曲谱"
+                    android:textColor="@color/navy"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/scorePreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/editor_background"
+                    android:fontFamily="monospace"
+                    android:gravity="top|start"
+                    android:padding="10dp"
+                    android:scrollbars="vertical"
+                    android:text="下载后在这里预览 NOTE 内容"
+                    android:textColor="@color/ink"
+                    android:textIsSelectable="true"
+                    android:textSize="11sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/downloadButton"
+                        android:layout_width="0dp"
+                        android:layout_height="46dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/navy"
+                        android:text="下载保存"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/copyButton"
+                        android:layout_width="0dp"
+                        android:layout_height="46dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/muted"
+                        android:text="复制内容"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/sendButton"
+                        android:layout_width="0dp"
+                        android:layout_height="46dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/teal"
+                        android:text="蓝牙发送"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/performancePage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="演奏模式"
+                    android:textColor="@color/navy"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/performanceModeGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/freePlayRadio"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="自由演奏"
+                        android:textColor="@color/ink"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:id="@+id/followScoreRadio"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:text="曲谱跟弹"
+                        android:textColor="@color/ink"
+                        android:textSize="14sp" />
+                </RadioGroup>
+
+                <Button
+                    android:id="@+id/testModeButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="7dp"
+                    android:backgroundTint="@color/blue"
+                    android:text="进入32音测试"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:id="@+id/followGuidePanel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/panel_background"
+                    android:elevation="2dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/followTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="尚未选择曲谱"
+                        android:textColor="@color/navy"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/followProgress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="第 0/0 组"
+                        android:textColor="@color/muted"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/followExpected"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="应弹：--"
+                        android:textColor="@color/teal"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/followFeedback"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="请先选择曲谱"
+                        android:textColor="@color/muted"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="实体键映射"
+                    android:textColor="@color/navy"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="CH1～CH8 仅控制实体压力键，不影响手机虚拟琴键；设置后点“应用映射”。"
+                    android:textColor="@color/muted"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/panel_background"
+                    android:orientation="vertical">
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:orientation="horizontal"><TextView android:layout_width="68dp" android:layout_height="wrap_content" android:text="CH1" android:textColor="@color/ink" android:textStyle="bold" /><Spinner android:id="@+id/mapSpinner0" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" /></LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:orientation="horizontal"><TextView android:layout_width="68dp" android:layout_height="wrap_content" android:text="CH2" android:textColor="@color/ink" android:textStyle="bold" /><Spinner android:id="@+id/mapSpinner1" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" /></LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:orientation="horizontal"><TextView android:layout_width="68dp" android:layout_height="wrap_content" android:text="CH3" android:textColor="@color/ink" android:textStyle="bold" /><Spinner android:id="@+id/mapSpinner2" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" /></LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:orientation="horizontal"><TextView android:layout_width="68dp" android:layout_height="wrap_content" android:text="CH4" android:textColor="@color/ink" android:textStyle="bold" /><Spinner android:id="@+id/mapSpinner3" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" /></LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:orientation="horizontal"><TextView android:layout_width="68dp" android:layout_height="wrap_content" android:text="CH5" android:textColor="@color/ink" android:textStyle="bold" /><Spinner android:id="@+id/mapSpinner4" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" /></LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:orientation="horizontal"><TextView android:layout_width="68dp" android:layout_height="wrap_content" android:text="CH6" android:textColor="@color/ink" android:textStyle="bold" /><Spinner android:id="@+id/mapSpinner5" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" /></LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:orientation="horizontal"><TextView android:layout_width="68dp" android:layout_height="wrap_content" android:text="CH7" android:textColor="@color/ink" android:textStyle="bold" /><Spinner android:id="@+id/mapSpinner6" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" /></LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:orientation="horizontal"><TextView android:layout_width="68dp" android:layout_height="wrap_content" android:text="CH8" android:textColor="@color/ink" android:textStyle="bold" /><Spinner android:id="@+id/mapSpinner7" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" /></LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/applyMappingButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="7dp"
+                    android:backgroundTint="@color/navy"
+                    android:text="应用实体键映射"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="手机虚拟琴键"
+                    android:textColor="@color/navy"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="演奏时关闭编辑模式；需要修改琴键时先点“编辑琴键”，再点对应琴键。"
+                    android:textColor="@color/muted"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/editKeysButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="7dp"
+                    android:backgroundTint="@color/muted"
+                    android:text="编辑琴键"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <GridLayout
+                    android:id="@+id/remotePadGrid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:columnCount="2"
+                    android:rowCount="4"
+                    android:useDefaultMargins="true">
+
+                    <Button android:id="@+id/padButton0" android:layout_width="0dp" android:layout_height="82dp" android:layout_columnWeight="1" android:layout_margin="4dp" android:backgroundTint="@color/teal" android:text="琴键1&#10;音0 · 力度20" android:textColor="@color/white" android:textSize="12sp" />
+                    <Button android:id="@+id/padButton1" android:layout_width="0dp" android:layout_height="82dp" android:layout_columnWeight="1" android:layout_margin="4dp" android:backgroundTint="@color/teal" android:text="琴键2&#10;音1 · 力度20" android:textColor="@color/white" android:textSize="12sp" />
+                    <Button android:id="@+id/padButton2" android:layout_width="0dp" android:layout_height="82dp" android:layout_columnWeight="1" android:layout_margin="4dp" android:backgroundTint="@color/teal" android:text="琴键3&#10;音2 · 力度20" android:textColor="@color/white" android:textSize="12sp" />
+                    <Button android:id="@+id/padButton3" android:layout_width="0dp" android:layout_height="82dp" android:layout_columnWeight="1" android:layout_margin="4dp" android:backgroundTint="@color/teal" android:text="琴键4&#10;音3 · 力度20" android:textColor="@color/white" android:textSize="12sp" />
+                    <Button android:id="@+id/padButton4" android:layout_width="0dp" android:layout_height="82dp" android:layout_columnWeight="1" android:layout_margin="4dp" android:backgroundTint="@color/teal" android:text="琴键5&#10;音4 · 力度20" android:textColor="@color/white" android:textSize="12sp" />
+                    <Button android:id="@+id/padButton5" android:layout_width="0dp" android:layout_height="82dp" android:layout_columnWeight="1" android:layout_margin="4dp" android:backgroundTint="@color/teal" android:text="琴键6&#10;音5 · 力度20" android:textColor="@color/white" android:textSize="12sp" />
+                    <Button android:id="@+id/padButton6" android:layout_width="0dp" android:layout_height="82dp" android:layout_columnWeight="1" android:layout_margin="4dp" android:backgroundTint="@color/teal" android:text="琴键7&#10;音6 · 力度20" android:textColor="@color/white" android:textSize="12sp" />
+                    <Button android:id="@+id/padButton7" android:layout_width="0dp" android:layout_height="82dp" android:layout_columnWeight="1" android:layout_margin="4dp" android:backgroundTint="@color/teal" android:text="琴键8&#10;音7 · 力度20" android:textColor="@color/white" android:textSize="12sp" />
+                </GridLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/allUpButton"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/muted"
+                        android:text="全部松开"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/performanceRecordButton"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/navy"
+                        android:text="开始录音"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/protocolStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="连接后显示 FPGA 远程控制状态"
+                    android:textColor="@color/muted"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/recordingPage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="演奏录音"
+                    android:textColor="@color/navy"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="开始录音会覆盖 FPGA 中原有录音。停止后自动取回全部事件。"
+                    android:textColor="@color/muted"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/startRecordingButton"
+                        android:layout_width="0dp"
+                        android:layout_height="46dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/navy"
+                        android:text="开始录音"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/stopAndFetchButton"
+                        android:layout_width="0dp"
+                        android:layout_height="46dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/teal"
+                        android:text="停止并取回"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/replayRecordingButton"
+                        android:layout_width="0dp"
+                        android:layout_height="46dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/muted"
+                        android:text="回放录音"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/recordingStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="尚未取回录音"
+                    android:textColor="@color/muted"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/recordingText"
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/editor_background"
+                    android:fontFamily="monospace"
+                    android:gravity="top|start"
+                    android:inputType="textMultiLine|textNoSuggestions"
+                    android:padding="10dp"
+                    android:scrollbars="vertical"
+                    android:textColor="@color/ink"
+                    android:textSize="11sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/saveRecordingButton"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/navy"
+                        android:text="保存"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/copyRecordingButton"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/muted"
+                        android:text="复制"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/clearRecordingButton"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/navy"
+                        android:text="清除"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/sendRecordingButton"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/teal"
+                        android:text="发送回放"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/status_background"
+        android:minHeight="34dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="7dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="7dp"
+        android:text="准备就绪"
+        android:textColor="@color/muted"
+        android:textSize="12sp" />
+</LinearLayout>

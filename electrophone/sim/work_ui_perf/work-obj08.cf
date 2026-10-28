@@ -1,0 +1,30 @@
+v 4
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "sim\tb_audio_scope.vhd" "d57f87e17999697c8a6afc836bdc886cf3afd152" "20261024145022.479":
+  entity tb_audio_scope at 1( 0) + 0 on 32;
+  architecture sim of tb_audio_scope at 9( 131) + 0 on 33;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "sim\tb_st7796s_display.vhd" "5a77316dc5757d334cd4eea932b53e16a5c14451" "20261024143322.651":
+  entity tb_st7796s_display at 1( 0) + 0 on 24;
+  architecture sim of tb_st7796s_display at 7( 86) + 0 on 25;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "sim\tb_dashboard.vhd" "6f14f30a467eac17cefb0f099de4db3faa6ecf03" "20261024143209.027":
+  entity tb_dashboard at 1( 0) + 0 on 20;
+  architecture sim of tb_dashboard at 12( 197) + 0 on 21;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\wave_preview.vhd" "fe9e8388ee4faad46ad7b6a4966a3f56d16fada3" "20261024143208.974":
+  entity wave_preview at 1( 0) + 0 on 16;
+  architecture rtl of wave_preview at 25( 779) + 0 on 17;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\ui_layout.vhd" "4afcf5d9526a3fbfd421f9b4d0c4196ec8e61205" "20261024143208.926":
+  package ui_layout at 1( 0) + 0 on 12 body;
+  package body ui_layout at 56( 1813) + 0 on 13;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\ui_types.vhd" "b0805adc681ed46ddce7e170701152ebac1cc42e" "20261024143208.900":
+  package ui_types at 1( 0) + 0 on 11;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\cjk_font_rom.vhd" "2e1f022ea65fe8e8123de851f180b98b8d2e35f4" "20261024143208.949":
+  package cjk_font_rom at 1( 0) + 0 on 14 body;
+  package body cjk_font_rom at 138( 11473) + 0 on 15;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\color_ui_renderer.vhd" "8b45ae2bd76c41b0a6b2c2be8f41b30c052b115c" "20261024143209.001":
+  entity color_ui_renderer at 1( 0) + 0 on 18;
+  architecture rtl of color_ui_renderer at 29( 947) + 0 on 19;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\st7796s_display.vhd" "8ce32e19572b114364ea881ae6ad171b53f6f966" "20261024143322.625":
+  entity st7796s_display at 1( 0) + 0 on 22;
+  architecture rtl of st7796s_display at 31( 1123) + 0 on 23;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\audio_scope.vhd" "117bb7f579d96f02470c8c05c2ca2b8d1b2f5ee4" "20261024145022.452":
+  entity audio_scope at 1( 0) + 0 on 30;
+  architecture rtl of audio_scope at 19( 581) + 0 on 31;

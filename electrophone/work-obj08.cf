@@ -1,0 +1,30 @@
+v 4
+file . "sim\tb_score_sequencer.vhd" "6e98c38bee365d11c61525f726c83a9266ff98e4" "20261024063323.556":
+  entity tb_score_sequencer at 1( 0) + 0 on 74;
+  architecture sim of tb_score_sequencer at 10( 152) + 0 on 75;
+file . "src\score_sequencer.vhd" "00236de7e577b160f7cc8829b44c185ff5b37b01" "20261024063334.708":
+  entity score_sequencer at 1( 0) + 0 on 76;
+  architecture rtl of score_sequencer at 28( 848) + 0 on 77;
+file . "src\ui_types.vhd" "3e241ecda21469cae8734b9a2108a99a2016312d" "20261024063309.598":
+  package ui_types at 1( 0) + 0 on 59;
+file . "sim\tb_command_parser.vhd" "3d6629e16f84c5bb8a3cd3394ecfbee0a665384d" "20261024063226.155":
+  entity tb_command_parser at 1( 0) + 0 on 57;
+  architecture sim of tb_command_parser at 9( 128) + 0 on 58;
+file . "src\command_parser.vhd" "28ff3fa6fbe2f44e75f0af7ac3aa7e6948f78234" "20261024063226.154":
+  entity command_parser at 1( 0) + 0 on 55;
+  architecture rtl of command_parser at 34( 992) + 0 on 56;
+file . "src\uart_rx.vhd" "316e41c4586d2cb22f6ab5306edcb7ebfad823f8" "20261024063012.586":
+  entity uart_rx at 1( 0) + 0 on 27;
+  architecture rtl of uart_rx at 20( 493) + 0 on 28;
+file . "src\uart_tx.vhd" "3222633069c54b999a426b5eb7129424dcd10bb5" "20261024063012.586":
+  entity uart_tx at 1( 0) + 0 on 29;
+  architecture rtl of uart_tx at 19( 455) + 0 on 30;
+file . "sim\tb_uart.vhd" "6895f3ae9911fe4e8c9056f24efb5b97e536dbfe" "20261024063017.188":
+  entity tb_uart at 1( 0) + 0 on 33;
+  architecture sim of tb_uart at 9( 118) + 0 on 34;
+file . "src\score_event_ram.vhd" "7a87cb82e373ab2c9fd373f5d1dfa9a36972ad93" "20261024063309.599":
+  entity score_event_ram at 1( 0) + 0 on 60;
+  architecture rtl of score_event_ram at 26( 859) + 0 on 61;
+file . "sim\tb_score_event_ram.vhd" "1701656ee65a0552eea8cf21e87dd316aac3635e" "20261024063057.995":
+  entity tb_score_event_ram at 1( 0) + 0 on 45;
+  architecture sim of tb_score_event_ram at 9( 129) + 0 on 46;

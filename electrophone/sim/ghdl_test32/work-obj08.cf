@@ -1,0 +1,30 @@
+v 4
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "sim\tb_test32_mode.vhd" "b1fb4e0bb82be70d8d18df879de465fcc5868112" "20261026160157.514":
+  entity tb_test32_mode at 1( 0) + 0 on 28;
+  architecture sim of tb_test32_mode at 11( 267) + 0 on 29;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\spectrum_analyzer.vhd" "da326a3e41218d970167b84179d7b58f3fa8a460" "20261026160157.513":
+  entity spectrum_analyzer at 1( 0) + 0 on 26;
+  architecture rtl of spectrum_analyzer at 21( 618) + 0 on 27;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\spectrum_work_ram.vhd" "b9bf8cb0404862753e104d39d08ad0115a651be0" "20261026160157.512":
+  entity spectrum_work_ram at 1( 0) + 0 on 24;
+  architecture rtl of spectrum_work_ram at 18( 536) + 0 on 25;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\spectrum_capture_ram.vhd" "eee9e46d8719992333adb512767d38bade294f23" "20261026160157.512":
+  entity spectrum_capture_ram at 1( 0) + 0 on 22;
+  architecture rtl of spectrum_capture_ram at 18( 513) + 0 on 23;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\spectrum_tables.vhd" "ecad23f2f130de5f22ff2ceb95104b671acdb16e" "20261026160157.511":
+  package spectrum_tables at 1( 0) + 0 on 20 body;
+  package body spectrum_tables at 533( 94333) + 0 on 21;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\synth_engine.vhd" "db4ce4ba0426060ba03d5b75d98d848fd834b836" "20261026160157.497":
+  entity synth_engine at 1( 0) + 0 on 18;
+  architecture rtl of synth_engine at 30( 955) + 0 on 19;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\voice_state_ram.vhd" "4dfc69cbf6841231648cf24113d83784fe0d0d6a" "20261026160157.495":
+  entity voice_state_ram at 1( 0) + 0 on 16;
+  architecture rtl of voice_state_ram at 17( 420) + 0 on 17;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\voice_allocator.vhd" "4411cabed4022e299a87f248dfab87fb54c7f3e0" "20261026160157.494":
+  entity voice_allocator at 1( 0) + 0 on 14;
+  architecture rtl of voice_allocator at 24( 838) + 0 on 15;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\pitch_lut.vhd" "6c87d474669d9d77417be07215ed395dd0ac4311" "20261026160157.493":
+  package pitch_lut at 1( 0) + 0 on 12 body;
+  package body pitch_lut at 66( 5371) + 0 on 13;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\ui_types.vhd" "0560797caf575c73bac5031a7175854b315a018f" "20261026160157.492":
+  package ui_types at 1( 0) + 0 on 11;

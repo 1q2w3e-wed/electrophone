@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.electrophone.scoreapp.ScoreValidatorTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-26T16:41:48" hostname="DESKTOP-D1KIGFE" time="0.016">
+  <properties/>
+  <testcase name="bundledCatalogAndScoresAreValid" classname="com.electrophone.scoreapp.ScoreValidatorTest" time="0.009"/>
+  <testcase name="addsMissingControlCommandsAndPreservesNotes" classname="com.electrophone.scoreapp.ScoreValidatorTest" time="0.001"/>
+  <testcase name="rejectsDurationNotDivisibleByTen" classname="com.electrophone.scoreapp.ScoreValidatorTest" time="0.0"/>
+  <testcase name="rejectsUnknownCommandWithLineNumber" classname="com.electrophone.scoreapp.ScoreValidatorTest" time="0.0"/>
+  <testcase name="resolvesUnicodeScorePathsToHttpsUrl" classname="com.electrophone.scoreapp.ScoreValidatorTest" time="0.006"/>
+  <testcase name="searchesCatalogAliasesAndResolvesRelativeFiles" classname="com.electrophone.scoreapp.ScoreValidatorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,27 @@
+v 4
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "sim\tb_lissajous_scope.vhd" "208465678cef3970d31d557fecb67c8536333622" "20261024155811.614":
+  entity tb_lissajous_scope at 1( 0) + 0 on 26;
+  architecture sim of tb_lissajous_scope at 9( 136) + 0 on 27;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\lissajous_scope.vhd" "4aef99dd38dea905c027ba669d901e2488621d60" "20261024155811.554":
+  entity lissajous_scope at 1( 0) + 0 on 22;
+  architecture rtl of lissajous_scope at 18( 458) + 0 on 23;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\spectrum_analyzer.vhd" "8a04301380930394085b00b35c5276c83c855359" "20261024155811.511":
+  entity spectrum_analyzer at 1( 0) + 0 on 18;
+  architecture rtl of spectrum_analyzer at 19( 512) + 0 on 19;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\spectrum_capture_ram.vhd" "eee9e46d8719992333adb512767d38bade294f23" "20261024155811.446":
+  entity spectrum_capture_ram at 1( 0) + 0 on 14;
+  architecture rtl of spectrum_capture_ram at 18( 513) + 0 on 15;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\ui_types.vhd" "b0805adc681ed46ddce7e170701152ebac1cc42e" "20261024155811.380":
+  package ui_types at 1( 0) + 0 on 11;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\spectrum_tables.vhd" "ecad23f2f130de5f22ff2ceb95104b671acdb16e" "20261024155811.413":
+  package spectrum_tables at 1( 0) + 0 on 12 body;
+  package body spectrum_tables at 533( 94333) + 0 on 13;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\spectrum_work_ram.vhd" "b9bf8cb0404862753e104d39d08ad0115a651be0" "20261024155811.478":
+  entity spectrum_work_ram at 1( 0) + 0 on 16;
+  architecture rtl of spectrum_work_ram at 18( 536) + 0 on 17;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\lissajous_bitmap_ram.vhd" "d7631f078dd32eb1aaaa9a66a1005b61c27c746c" "20261024155811.532":
+  entity lissajous_bitmap_ram at 1( 0) + 0 on 20;
+  architecture rtl of lissajous_bitmap_ram at 18( 451) + 0 on 21;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "sim\tb_spectrum_analyzer.vhd" "fdfaee89dfc9ae040402269f19ef3f31e8679cd9" "20261024155811.588":
+  entity tb_spectrum_analyzer at 1( 0) + 0 on 24;
+  architecture sim of tb_spectrum_analyzer at 10( 168) + 0 on 25;

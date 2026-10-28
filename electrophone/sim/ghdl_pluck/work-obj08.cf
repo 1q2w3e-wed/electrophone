@@ -1,0 +1,9 @@
+v 4
+file / "D:\Gowin\WorkSpace\1-1\electrophone\sim\tb_ui_controller.vhd" "83925764b469b5ed3079cb94330c08304d95f253" "20261028040506.960":
+  entity tb_ui_controller at 1( 0) + 0 on 14;
+  architecture sim of tb_ui_controller at 8( 107) + 0 on 15;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\ui_controller.vhd" "082f0aed7b748d620a195a9ef1f9df57316f2189" "20261028040506.959":
+  entity ui_controller at 1( 0) + 0 on 12;
+  architecture rtl of ui_controller at 38( 1480) + 0 on 13;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\ui_types.vhd" "42bd512d1a69833052fec80c5c2c4fe8628d9412" "20261028040506.958":
+  package ui_types at 1( 0) + 0 on 11;

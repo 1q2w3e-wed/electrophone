@@ -1,0 +1,7 @@
+v 4
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "sim\tb_i2s_transmitter.vhd" "857b9579fd40e41a4800fa295b641e71427a9351" "20261027164722.758":
+  entity tb_i2s_transmitter at 1( 0) + 0 on 13;
+  architecture sim of tb_i2s_transmitter at 8( 112) + 0 on 14;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\i2s_transmitter.vhd" "7d11fe71e3e7598a75d87e0988ced6fdfd5d36e9" "20261027164722.758":
+  entity i2s_transmitter at 1( 0) + 0 on 11;
+  architecture rtl of i2s_transmitter at 20( 489) + 0 on 12;

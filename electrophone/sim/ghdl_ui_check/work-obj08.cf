@@ -1,0 +1,18 @@
+v 4
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "sim\tb_volume_bar.vhd" "6e2e8df7f81f73650b13dbb19ab7cfcddd8a4af7" "20261025043251.549":
+  entity tb_volume_bar at 1( 0) + 0 on 20;
+  architecture sim of tb_volume_bar at 10( 154) + 0 on 21;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\ui_types.vhd" "f207233dcca0d513a7de9851a1f3b963ba308ba5" "20261025043251.504":
+  package ui_types at 1( 0) + 0 on 11;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\ui_layout.vhd" "4afcf5d9526a3fbfd421f9b4d0c4196ec8e61205" "20261025043251.505":
+  package ui_layout at 1( 0) + 0 on 12 body;
+  package body ui_layout at 56( 1813) + 0 on 13;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\cjk_font_rom.vhd" "2e1f022ea65fe8e8123de851f180b98b8d2e35f4" "20261025043251.506":
+  package cjk_font_rom at 1( 0) + 0 on 14 body;
+  package body cjk_font_rom at 138( 11473) + 0 on 15;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\wave_preview.vhd" "fe9e8388ee4faad46ad7b6a4966a3f56d16fada3" "20261025043251.507":
+  entity wave_preview at 1( 0) + 0 on 16;
+  architecture rtl of wave_preview at 25( 779) + 0 on 17;
+file "D:\Gowin\WorkSpace\1-1\electrophone\" "src\color_ui_renderer.vhd" "19d8fbbb5e26742c8d56dc2b126c815813024e2a" "20261025043251.508":
+  entity color_ui_renderer at 1( 0) + 0 on 18;
+  architecture rtl of color_ui_renderer at 29( 947) + 0 on 19;

@@ -1,0 +1,18 @@
+v 4
+file / "D:\Gowin\WorkSpace\1-1\electrophone\sim\tb_dashboard.vhd" "0dd022ac4bcc148afd0a8bd6f87914bf537f230b" "20261028040513.873":
+  entity tb_dashboard at 1( 0) + 0 on 20;
+  architecture sim of tb_dashboard at 12( 197) + 0 on 21;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\color_ui_renderer.vhd" "6dc998913c12a6a68cf5d5afb079578c83005914" "20261028040513.872":
+  entity color_ui_renderer at 1( 0) + 0 on 18;
+  architecture rtl of color_ui_renderer at 30( 986) + 0 on 19;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\wave_preview.vhd" "7fbb7e724d9f40184a84e583401381706ba556bb" "20261028040513.870":
+  entity wave_preview at 1( 0) + 0 on 16;
+  architecture rtl of wave_preview at 26( 818) + 0 on 17;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\cjk_font_rom.vhd" "557b12fd70124922c6807ee05e2e3c383f72e1bf" "20261028040513.869":
+  package cjk_font_rom at 1( 0) + 0 on 14 body;
+  package body cjk_font_rom at 140( 11657) + 0 on 15;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\ui_layout.vhd" "4afcf5d9526a3fbfd421f9b4d0c4196ec8e61205" "20261028040513.868":
+  package ui_layout at 1( 0) + 0 on 12 body;
+  package body ui_layout at 56( 1813) + 0 on 13;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\ui_types.vhd" "42bd512d1a69833052fec80c5c2c4fe8628d9412" "20261028040513.868":
+  package ui_types at 1( 0) + 0 on 11;
