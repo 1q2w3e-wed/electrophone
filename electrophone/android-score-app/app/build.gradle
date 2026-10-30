@@ -10,8 +10,8 @@ android {
         applicationId "com.electrophone.scoreapp"
         minSdk 23
         targetSdk 35
-        versionCode 12
-        versionName "3.3"
+        versionCode 14
+        versionName "3.5"
     }
 
     buildTypes {

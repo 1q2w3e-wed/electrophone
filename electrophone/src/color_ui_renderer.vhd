@@ -15,6 +15,8 @@ entity color_ui_renderer is
         status_i  : in status_t;
         pedal_mode_i : in std_logic;
         octave_shift_i : in std_logic;
+        playback_active_i : in std_logic;
+        score_available_i : in std_logic;
         active_count_i : in voice_count_t;
         audio_sample_i  : in audio_sample_t;
         sensor_levels_i : in sensor_array_t;
@@ -34,6 +36,8 @@ architecture rtl of color_ui_renderer is
     signal status  : status_t := STATUS_NONE;
     signal pedal_mode : std_logic := '0';
     signal octave_shift : std_logic := '0';
+    signal playback_active : std_logic := '0';
+    signal score_available : std_logic := '0';
     signal active_count : voice_count_t := 0;
     signal wave_color : rgb565_t;
     signal render_next : rgb565_t := (others => '0');
@@ -286,6 +290,8 @@ begin
                 status <= STATUS_NONE;
                 pedal_mode <= '0';
                 octave_shift <= '0';
+                playback_active <= '0';
+                score_available <= '0';
                 active_count <= 0;
                 sensor_levels <= (others => (others => '0'));
                 note_active <= (others => '0');
@@ -298,6 +304,8 @@ begin
                 status <= status_i;
                 pedal_mode <= pedal_mode_i;
                 octave_shift <= octave_shift_i;
+                playback_active <= playback_active_i;
+                score_available <= score_available_i;
                 active_count <= active_count_i;
                 sensor_levels <= sensor_levels_i;
                 note_active <= note_active_i;
@@ -308,7 +316,8 @@ begin
         end if;
     end process;
 
-    process(focus, preview, cfg, status, pedal_mode, octave_shift, active_count,
+    process(focus, preview, cfg, status, pedal_mode, octave_shift,
+            playback_active, score_available, active_count,
             spectrum_level_i, note_active, lissajous_pixel_i,
         wave_color, pixel_x_i, pixel_y_i, volume_text, volume_bar_end)
         variable result : rgb565_t;
@@ -360,7 +369,24 @@ begin
             elsif cjk_pixel(focus_text(focus), 380, 12, 1, x, y) then
                 result := C_ORANGE;
             end if;
-            if pedal_mode = '1' then
+            if focus = FOCUS_OCTAVE then
+                if ascii_pixel("SONG", 188, 16, 1, x, y) then
+                    result := C_ORANGE;
+                end if;
+                if score_available = '0' then
+                    if ascii_pixel("EMPTY", 224, 16, 1, x, y) then
+                        result := C_MUTED;
+                    end if;
+                elsif playback_active = '1' then
+                    if ascii_pixel("STOP", 230, 16, 1, x, y) then
+                        result := C_CYAN;
+                    end if;
+                else
+                    if ascii_pixel("PLAY", 230, 16, 1, x, y) then
+                        result := C_CYAN;
+                    end if;
+                end if;
+            elsif pedal_mode = '1' then
                 if active_count /= POLYPHONY then
                     if cjk_pixel(T_PEDAL, 188, 12, 1, x, y) then
                         result := C_MUTED;

@@ -58,7 +58,8 @@ architecture rtl of voice_allocator is
     signal alloc_age : unsigned(15 downto 0) := (others => '0');
     signal alloc_slot : voice_index_t := 0;
     signal alloc_slot_free : std_logic := '0';
-    signal allocator_state : natural range 0 to 2 := 0;
+    signal done_slot : voice_index_t := 0;
+    signal allocator_state : natural range 0 to 3 := 0;
     signal scan_index : voice_index_t := 0;
     signal scan_free_found : std_logic := '0';
     signal scan_free_slot : voice_index_t := 0;
@@ -158,6 +159,7 @@ begin
                 alloc_age <= (others => '0');
                 alloc_slot <= 0;
                 alloc_slot_free <= '0';
+                done_slot <= 0;
                 allocator_state <= 0;
                 scan_index <= 0;
                 scan_free_found <= '0';
@@ -189,58 +191,55 @@ begin
 
                         done_v := pending_done and releasing_v;
                         if done_v /= (done_v'range => '0') then
-                            slot_v := first_voice(done_v);
-                            active_v(slot_v) := '0';
-                            releasing_v(slot_v) := '0';
-                            pending_done(slot_v) <= '0';
-                            note_counts_v(note_v(slot_v)) :=
-                                note_counts_v(note_v(slot_v)) - 1;
-                            count_v := count_v - 1;
-                        end if;
-
-                        if pedal_mode = '0' then
-                            releasing_v := releasing_v or latched_v;
-                            latched_v := (others => '0');
-                        end if;
-
-                        for key in 0 to 7 loop
-                            if sensor_prev(key) = '1' and
-                               sensor_on(key) = '0' then
-                                note_mask_v := note_held_v(key);
-                                held_v := held_v and not note_mask_v;
-                                note_held_v(key) := (others => '0');
-                                if pedal_mode = '1' then
-                                    latched_v := latched_v or note_mask_v;
-                                else
-                                    releasing_v := releasing_v or note_mask_v;
-                                end if;
+                            done_slot <= first_voice(done_v);
+                            pending_on <= pending_v;
+                            allocator_state <= 3;
+                        else
+                            if pedal_mode = '0' then
+                                releasing_v := releasing_v or latched_v;
+                                latched_v := (others => '0');
                             end if;
-                        end loop;
 
-                        if pending_v /= "00000000" then
-                            key_v := first_key(pending_v);
-                            pending_v(key_v) := '0';
-                            alloc_key <= key_v;
-                            alloc_age <= next_age_reg + 1;
-                            next_age_reg <= next_age_reg + 1;
-                            scan_index <= 0;
-                            scan_free_found <= '0';
-                            scan_oldest_age <= (others => '0');
-                            allocator_state <= 1;
+                            for key in 0 to 7 loop
+                                if sensor_prev(key) = '1' and
+                                   sensor_on(key) = '0' then
+                                    note_mask_v := note_held_v(key);
+                                    held_v := held_v and not note_mask_v;
+                                    note_held_v(key) := (others => '0');
+                                    if pedal_mode = '1' then
+                                        latched_v := latched_v or note_mask_v;
+                                    else
+                                        releasing_v := releasing_v or
+                                                       note_mask_v;
+                                    end if;
+                                end if;
+                            end loop;
+
+                            if pending_v /= "00000000" then
+                                key_v := first_key(pending_v);
+                                pending_v(key_v) := '0';
+                                alloc_key <= key_v;
+                                alloc_age <= next_age_reg + 1;
+                                next_age_reg <= next_age_reg + 1;
+                                scan_index <= 0;
+                                scan_free_found <= '0';
+                                scan_oldest_age <= (others => '0');
+                                allocator_state <= 1;
+                            end if;
+
+                            active_mask <= active_v;
+                            held_mask <= held_v;
+                            latched_mask <= latched_v;
+                            releasing_mask <= releasing_v;
+                            note_held_mask <= note_held_v;
+                            voice_note <= note_v;
+                            voice_tone <= tone_v;
+                            voice_level <= level_v;
+                            voice_age <= age_v;
+                            note_counts <= note_counts_v;
+                            active_count_reg <= count_v;
+                            pending_on <= pending_v;
                         end if;
-
-                        active_mask <= active_v;
-                        held_mask <= held_v;
-                        latched_mask <= latched_v;
-                        releasing_mask <= releasing_v;
-                        note_held_mask <= note_held_v;
-                        voice_note <= note_v;
-                        voice_tone <= tone_v;
-                        voice_level <= level_v;
-                        voice_age <= age_v;
-                        note_counts <= note_counts_v;
-                        active_count_reg <= count_v;
-                        pending_on <= pending_v;
                     when 1 =>
                         free_found_v := scan_free_found;
                         free_slot_v := scan_free_slot;
@@ -276,7 +275,7 @@ begin
                             scan_oldest_slot <= oldest_slot_v;
                             scan_oldest_age <= oldest_age_v;
                         end if;
-                    when others =>
+                    when 2 =>
                         active_v := active_mask;
                         held_v := held_mask;
                         latched_v := latched_mask;
@@ -322,6 +321,32 @@ begin
                         voice_tone <= tone_v;
                         voice_level <= level_v;
                         voice_age <= age_v;
+                        note_counts <= note_counts_v;
+                        active_count_reg <= count_v;
+                        allocator_state <= 0;
+                    when others =>
+                        active_v := active_mask;
+                        held_v := held_mask;
+                        latched_v := latched_mask;
+                        releasing_v := releasing_mask;
+                        note_held_v := note_held_mask;
+                        note_v := voice_note;
+                        count_v := active_count_reg;
+                        note_counts_v := note_counts;
+
+                        slot_v := done_slot;
+                        active_v(slot_v) := '0';
+                        releasing_v(slot_v) := '0';
+                        pending_done(slot_v) <= '0';
+                        note_counts_v(note_v(slot_v)) :=
+                            note_counts_v(note_v(slot_v)) - 1;
+                        count_v := count_v - 1;
+
+                        active_mask <= active_v;
+                        held_mask <= held_v;
+                        latched_mask <= latched_v;
+                        releasing_mask <= releasing_v;
+                        note_held_mask <= note_held_v;
                         note_counts <= note_counts_v;
                         active_count_reg <= count_v;
                         allocator_state <= 0;

@@ -31,7 +31,9 @@ entity ui_controller is
         settings_o: out settings_t;
         status_o  : out status_t;
         pedal_mode_o : out std_logic;
-        octave_shift_o : out std_logic
+        octave_shift_o : out std_logic;
+        score_available : in std_logic;
+        score_control_o : out std_logic
     );
 end entity;
 
@@ -53,6 +55,7 @@ architecture rtl of ui_controller is
     signal pluck_mode : std_logic := '0';
     signal pluck_saved_sustain : natural range 0 to 100 :=
         G_DEFAULT_SUSTAIN;
+    signal score_control_pulse : std_logic := '0';
 
     function adjusted(value, amount, maximum : integer) return natural is
         variable result : integer := value + amount;
@@ -103,6 +106,7 @@ begin
         variable direction : integer range -1 to 1;
     begin
         if rising_edge(clk) then
+            score_control_pulse <= '0';
             if reset_n = '0' then
                 focus <= FOCUS_TIMBRE;
                 preview <= PREVIEW_AUDIO;
@@ -113,6 +117,7 @@ begin
                 octave_shift <= '0';
                 pluck_mode <= '0';
                 pluck_saved_sustain <= G_DEFAULT_SUSTAIN;
+                score_control_pulse <= '0';
             else
                 if status_count /= 0 then
                     status_count <= status_count - 1;
@@ -156,7 +161,12 @@ begin
                                     pedal_mode <= '0';
                                 end if;
                             when FOCUS_EFFECT  => cfg.effect_mode <= G_DEFAULT_EFFECT;
-                            when FOCUS_OCTAVE  => octave_shift <= '0';
+                            when FOCUS_OCTAVE  =>
+                                if score_available = '1' then
+                                    score_control_pulse <= '1';
+                                else
+                                    octave_shift <= '0';
+                                end if;
                         end case;
                         status_count <= STATUS_CYCLES;
                     end if;
@@ -239,4 +249,5 @@ begin
     status_o <= STATUS_RESET when status_count /= 0 else STATUS_NONE;
     pedal_mode_o <= pedal_mode;
     octave_shift_o <= octave_shift;
+    score_control_o <= score_control_pulse;
 end architecture;

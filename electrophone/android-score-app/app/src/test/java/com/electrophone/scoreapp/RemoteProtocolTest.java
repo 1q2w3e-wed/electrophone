@@ -2,6 +2,8 @@ package com.electrophone.scoreapp;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Arrays;
+
 import org.junit.Test;
 
 public final class RemoteProtocolTest {
@@ -23,5 +25,23 @@ public final class RemoteProtocolTest {
         assertEquals(3, RemoteProtocol.parseVersion("VERSION 3"));
         assertEquals(0, RemoteProtocol.parseVersion("ERR"));
         assertEquals(0xA5, RemoteProtocol.parseKeyState("KS A5"));
+    }
+
+    @Test
+    public void buildsOneDownPayloadForAWholeChord() {
+        RemoteKeyConfig first = new RemoteKeyConfig("低音", 0, 12, 0, 0);
+        RemoteKeyConfig second = new RemoteKeyConfig("中音", 2, 20, 1, 2);
+        assertEquals(
+                "KEY DOWN 0,12,0,0\r\nKEY DOWN 2,20,1,2\r\n",
+                RemoteProtocol.keyDownBatch(Arrays.asList(first, second))
+        );
+    }
+
+    @Test
+    public void buildsOneUpPayloadForAWholeChordRelease() {
+        assertEquals(
+                "KEY UP 0\r\nKEY UP 2\r\nKEY UP 4\r\n",
+                RemoteProtocol.keyUpBatch(Arrays.asList(0, 2, 4))
+        );
     }
 }

@@ -1,5 +1,7 @@
 package com.electrophone.scoreapp;
 
+import java.util.List;
+
 public final class RemoteProtocol {
     private RemoteProtocol() {
     }
@@ -31,8 +33,24 @@ public final class RemoteProtocol {
                 + key.tone + "," + key.effect;
     }
 
+    public static String keyDownBatch(List<RemoteKeyConfig> keys) {
+        StringBuilder commands = new StringBuilder();
+        for (RemoteKeyConfig key : keys) {
+            commands.append(keyDown(key)).append("\r\n");
+        }
+        return commands.toString();
+    }
+
     public static String keyUp(int note) {
         return "KEY UP " + note;
+    }
+
+    public static String keyUpBatch(List<Integer> notes) {
+        StringBuilder commands = new StringBuilder();
+        for (Integer note : notes) {
+            commands.append(keyUp(note)).append("\r\n");
+        }
+        return commands.toString();
     }
 
     public static String keyAllUp() {

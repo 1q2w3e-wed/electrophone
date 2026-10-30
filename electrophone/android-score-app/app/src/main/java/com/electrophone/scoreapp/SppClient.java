@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 import java.util.Collections;
 import java.util.Set;
 import java.util.UUID;
@@ -76,6 +77,24 @@ public final class SppClient implements AutoCloseable {
         expectOk(RemoteProtocol.keyDown(key));
     }
 
+    public void sendRemoteKeyDowns(List<RemoteKeyConfig> keys) throws IOException {
+        requireProtocolTwo();
+        if (keys == null || keys.isEmpty()) {
+            return;
+        }
+        byte[] bytes = RemoteProtocol.keyDownBatch(keys)
+                .getBytes(StandardCharsets.US_ASCII);
+        output.write(bytes);
+        output.flush();
+        for (int index = 0; index < keys.size(); index++) {
+            String response = responses.readToken(
+                    ResponseStream.COMMAND_RESPONSES, 1500);
+            if (!ResponseStream.OK.equals(response)) {
+                throw new IOException("设备返回 " + response);
+            }
+        }
+    }
+
     public void applyPhysicalMapping(int[] notes) throws IOException {
         requireConnection();
         if (notes == null || notes.length != 8) {
@@ -94,6 +113,24 @@ public final class SppClient implements AutoCloseable {
     public void sendRemoteKeyUp(int note) throws IOException {
         requireProtocolTwo();
         expectOk(RemoteProtocol.keyUp(note));
+    }
+
+    public void sendRemoteKeyUps(List<Integer> notes) throws IOException {
+        requireProtocolTwo();
+        if (notes == null || notes.isEmpty()) {
+            return;
+        }
+        byte[] bytes = RemoteProtocol.keyUpBatch(notes)
+                .getBytes(StandardCharsets.US_ASCII);
+        output.write(bytes);
+        output.flush();
+        for (int index = 0; index < notes.size(); index++) {
+            String response = responses.readToken(
+                    ResponseStream.COMMAND_RESPONSES, 1500);
+            if (!ResponseStream.OK.equals(response)) {
+                throw new IOException("设备返回 " + response);
+            }
+        }
     }
 
     public void releaseAllRemoteKeys() throws IOException {

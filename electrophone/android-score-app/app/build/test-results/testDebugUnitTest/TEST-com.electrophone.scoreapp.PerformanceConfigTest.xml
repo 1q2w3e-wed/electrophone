@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.electrophone.scoreapp.PerformanceConfigTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-26T16:41:48" hostname="DESKTOP-D1KIGFE" time="0.008">
+<testsuite name="com.electrophone.scoreapp.PerformanceConfigTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-29T14:55:26" hostname="DESKTOP-D1KIGFE" time="0.006">
   <properties/>
   <testcase name="defaultsUseEightUniquePhysicalAndRemoteNotes" classname="com.electrophone.scoreapp.PerformanceConfigTest" time="0.002"/>
   <testcase name="changingRemotePitchSwapsWithTheOtherKey" classname="com.electrophone.scoreapp.PerformanceConfigTest" time="0.0"/>
-  <testcase name="rejectsDuplicatePhysicalNotes" classname="com.electrophone.scoreapp.PerformanceConfigTest" time="0.001"/>
+  <testcase name="rejectsDuplicatePhysicalNotes" classname="com.electrophone.scoreapp.PerformanceConfigTest" time="0.0"/>
   <testcase name="jsonRoundTripPreservesEverySetting" classname="com.electrophone.scoreapp.PerformanceConfigTest" time="0.004"/>
-  <testcase name="rejectsOutOfRangeRemoteSettings" classname="com.electrophone.scoreapp.PerformanceConfigTest" time="0.001"/>
+  <testcase name="rejectsOutOfRangeRemoteSettings" classname="com.electrophone.scoreapp.PerformanceConfigTest" time="0.0"/>
   <testcase name="rejectsDuplicateRemoteNotes" classname="com.electrophone.scoreapp.PerformanceConfigTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

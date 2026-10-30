@@ -18,6 +18,8 @@ architecture sim of tb_volume_bar is
     signal cfg : settings_t := (0,100,20,100,70,200,0,20,80,FX_DRY);
     signal status : status_t := STATUS_NONE;
     signal pedal_mode : std_logic := '0';
+    signal playback_active : std_logic := '0';
+    signal score_available : std_logic := '0';
     signal active_count : voice_count_t := 0;
     signal audio_sample : audio_sample_t := (others => '0');
     signal sensor_levels : sensor_array_t := (others => (others => '0'));
@@ -37,6 +39,8 @@ begin
             settings_i => cfg, status_i => status,
             pedal_mode_i => pedal_mode,
             octave_shift_i => '0',
+            playback_active_i => playback_active,
+            score_available_i => score_available,
             active_count_i => active_count,
             audio_sample_i => audio_sample,
             sensor_levels_i => sensor_levels,

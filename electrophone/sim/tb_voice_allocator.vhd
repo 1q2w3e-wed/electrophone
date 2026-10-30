@@ -74,6 +74,8 @@ begin
             voice_done(index) <= '0';
             wait until rising_edge(clk);
             wait until falling_edge(clk);
+            wait until rising_edge(clk);
+            wait until falling_edge(clk);
         end procedure;
 
     begin

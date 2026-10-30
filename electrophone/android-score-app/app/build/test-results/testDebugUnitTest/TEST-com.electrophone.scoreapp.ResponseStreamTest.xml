@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.electrophone.scoreapp.ResponseStreamTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-26T16:41:48" hostname="DESKTOP-D1KIGFE" time="0.001">
+<testsuite name="com.electrophone.scoreapp.ResponseStreamTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-29T14:55:26" hostname="DESKTOP-D1KIGFE" time="0.001">
   <properties/>
   <testcase name="readsLegacyErrorWithoutLineEnding" classname="com.electrophone.scoreapp.ResponseStreamTest" time="0.001"/>
   <testcase name="findsPongAfterStaleErrorsWithoutLineEnding" classname="com.electrophone.scoreapp.ResponseStreamTest" time="0.0"/>

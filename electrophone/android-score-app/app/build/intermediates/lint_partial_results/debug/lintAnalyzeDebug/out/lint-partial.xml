@@ -5,22 +5,22 @@
                     <map id="android.bluetooth.adapter.action.REQUEST_ENABLE (used to start an activity)">
                         <location id="0"
                             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/electrophone/scoreapp/MainActivity.java"
-                            line="1088"
+                            line="1197"
                             column="27"
-                            startOffset="42295"
-                            endLine="1088"
+                            startOffset="46642"
+                            endLine="1197"
                             endColumn="77"
-                            endOffset="42345"/>
+                            endOffset="46692"/>
                     </map>
                     <map id="android.settings.BLUETOOTH_SETTINGS (used to start an activity)">
                         <location id="0"
                             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/electrophone/scoreapp/MainActivity.java"
-                            line="1098"
+                            line="1207"
                             column="43"
-                            startOffset="42796"
-                            endLine="1098"
+                            startOffset="47143"
+                            endLine="1207"
                             endColumn="89"
-                            endOffset="42842"/>
+                            endOffset="47189"/>
                     </map>
             </map>
     </map>

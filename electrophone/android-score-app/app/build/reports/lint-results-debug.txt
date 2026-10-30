@@ -6,10 +6,10 @@ D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\ac
    A scrolling widget such as a ScrollView should not contain any nested
    scrolling widgets since this has various usability issues
 
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:182: Warning: Use of this function is discouraged because resource reflection makes it harder to perform build optimizations and compile-time verification of code. It is much more efficient to retrieve resources by identifier (e.g. R.foo.bar) than by name (e.g. getIdentifier("bar", "foo", null)). [DiscouragedApi]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:190: Warning: Use of this function is discouraged because resource reflection makes it harder to perform build optimizations and compile-time verification of code. It is much more efficient to retrieve resources by identifier (e.g. R.foo.bar) than by name (e.g. getIdentifier("bar", "foo", null)). [DiscouragedApi]
             int buttonId = getResources().getIdentifier(
                                           ~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:184: Warning: Use of this function is discouraged because resource reflection makes it harder to perform build optimizations and compile-time verification of code. It is much more efficient to retrieve resources by identifier (e.g. R.foo.bar) than by name (e.g. getIdentifier("bar", "foo", null)). [DiscouragedApi]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:192: Warning: Use of this function is discouraged because resource reflection makes it harder to perform build optimizations and compile-time verification of code. It is much more efficient to retrieve resources by identifier (e.g. R.foo.bar) than by name (e.g. getIdentifier("bar", "foo", null)). [DiscouragedApi]
             int spinnerId = getResources().getIdentifier(
                                            ~~~~~~~~~~~~~
 
@@ -150,10 +150,10 @@ D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\res\layout\ac
 
    https://developer.android.com/guide/topics/text/autofill.html
 
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:229: Warning: Custom view `Button` has setOnTouchListener called on it but does not override performClick [ClickableViewAccessibility]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:237: Warning: Custom view `Button` has setOnTouchListener called on it but does not override performClick [ClickableViewAccessibility]
             pad.setOnTouchListener((view, event) -> {
             ^
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:229: Warning: onTouch lambda should call View#performClick when a click is detected [ClickableViewAccessibility]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:237: Warning: onTouch lambda should call View#performClick when a click is detected [ClickableViewAccessibility]
             pad.setOnTouchListener((view, event) -> {
                                    ^
 
@@ -164,91 +164,91 @@ D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\elec
    actions should ideally be placed in View#performClick as some accessibility
    services invoke performClick when a click action should occur.
 
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:363: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:371: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
                             (url.isEmpty() ? "内置目录" : "在线目录")
                             ^
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:388: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:396: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
             catalogStatus.setText("找到 " + visibleEntries.size() + " 首，点击选择");
                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:393: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:401: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
         scorePreview.setText("下载后在这里预览 NOTE 内容");
                              ~~~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:413: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:421: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
         statusText.setText("正在下载《" + entry.title + "》");
                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:425: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:433: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
                     statusText.setText("已校验 " + score.noteCount + " 个音符");
                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:444: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:452: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
             statusText.setText("已保存到 " + saved.displayLocation);
                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:529: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:537: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
                     key.label + "\n音" + key.note
                     ^
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:549: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:557: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             statusText.setText("32音测试中不能编辑琴键，请先退出测试模式");
                                ~~~~~~~~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:586: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:594: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             statusText.setText("32音测试中不能使用曲谱跟弹，请先退出测试模式");
                                ~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:591: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:599: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             statusText.setText("请先连接支持曲谱跟弹的 VERSION 3 固件");
                                ~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:642: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:650: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
         followProgress.setText("第 1/" + followSession.getStepCount() + " 组");
                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:643: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:651: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
         followExpected.setText("应弹：" + noteMaskText(step.mask));
                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:707: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:715: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
                 followProgress.setText("全部完成 · 共 " + update.stepCount + " 组");
                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:716: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:724: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
             followProgress.setText("第 " + (update.stepIndex + 1)
                                    ^
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:716: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:724: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
             followProgress.setText("第 " + (update.stepIndex + 1)
                                            ~~~~~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:718: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:726: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
             followExpected.setText("应弹：" + noteMaskText(update.expectedMask));
                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:854: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:862: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             statusText.setText("请先连接新版 FPGA 码流后再使用手机琴键");
                                ~~~~~~~~~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:930: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1039: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             statusText.setText("请先连接 FPGA 后再使用32音测试");
                                ~~~~~~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1065: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1174: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             protocolStatus.setText("未连接 FPGA");
                                    ~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1070: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1179: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             protocolStatus.setText("FPGA 协议 V3：自由演奏、曲谱跟弹和录音回传可用");
                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1072: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1181: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             protocolStatus.setText("FPGA 协议 V2：手机演奏、实体键映射和录音回传可用");
                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1074: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1183: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             protocolStatus.setText("旧版 FPGA 码流：只能发送曲谱，请烧录新版码流");
                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1156: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1265: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             statusText.setText("请先退出32音测试，再开始录音");
                                ~~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1160: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1269: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             statusText.setText("请先连接新版 FPGA 码流");
                                ~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1185: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1294: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             statusText.setText("请先连接新版 FPGA 码流");
                                ~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1200: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1309: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
                         "已取回 " + dump.eventCount + " 条事件，可编辑、保存或发送回放");
                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1218: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1327: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             runOnUiThread(() -> recordingStatus.setText("FPGA 正在回放已录制内容"));
                                                         ~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1250: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1359: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
             recordingStatus.setText("录音已保存到 " + saved.displayLocation);
                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1283: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+D:\Gowin\WorkSpace\1-1\electrophone\android-score-app\app\src\main\java\com\electrophone\scoreapp\MainActivity.java:1392: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                     statusText.setText("FPGA 内录音未删除，仍可点击“回放录音”");
                                        ~~~~~~~~~~~~~~~~~~~~~~~~
 

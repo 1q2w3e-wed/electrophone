@@ -71,6 +71,11 @@ begin
         assert peak > 1000
             report "Polyphonic test did not generate audio"
             severity failure;
+        report "Eight-voice peak: " & integer'image(peak)
+            severity note;
+        assert peak < 26000
+            report "Polyphonic mix enters excessive limiter compression"
+            severity failure;
 
         report "tb_polyphony_headroom passed" severity note;
         wait;

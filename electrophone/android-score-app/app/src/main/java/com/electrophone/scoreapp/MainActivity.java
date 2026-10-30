@@ -54,6 +54,8 @@ public final class MainActivity extends Activity {
     private static final String DEFAULT_CATALOG_URL =
             "https://1q2w3e-wed.github.io/electrophone-scores/catalog.json";
     private static final int REQUEST_BLUETOOTH_CONNECT = 2001;
+    private static final long REMOTE_KEY_DOWN_BATCH_MS = 120;
+    private static final long REMOTE_KEY_UP_BATCH_MS = 10;
     private static final int PAGE_SCORES = 0;
     private static final int PAGE_PERFORMANCE = 1;
     private static final int PAGE_RECORDING = 2;
@@ -65,6 +67,12 @@ public final class MainActivity extends Activity {
     private final Spinner[] mappingSpinners = new Spinner[8];
     private final Button[] remotePads = new Button[8];
     private final boolean[] remotePressed = new boolean[8];
+    private final Object remoteBatchLock = new Object();
+    private final ArrayList<Integer> pendingRemoteDowns = new ArrayList<>();
+    private final ArrayList<Integer> pendingRemoteUps = new ArrayList<>();
+    private boolean remoteDownBatchScheduled;
+    private boolean remoteUpBatchScheduled;
+    private boolean remoteDownFlushNow;
 
     private EditText catalogUrlInput;
     private EditText searchInput;
@@ -859,16 +867,7 @@ public final class MainActivity extends Activity {
         updateRemoteMask();
         remotePads[index].setPressed(true);
         remotePads[index].setAlpha(0.72f);
-        io.execute(() -> {
-            try {
-                sppClient.sendRemoteKeyDown(key);
-            } catch (IOException | SecurityException error) {
-                runOnUiThread(() -> {
-                    setRemotePadReleased(index);
-                    showError("琴键按下失败：" + readable(error));
-                });
-            }
-        });
+        queueRemoteKeyDown(index);
     }
 
     private void releaseRemoteKey(int index) {
@@ -878,14 +877,118 @@ public final class MainActivity extends Activity {
         RemoteKeyConfig key = performanceConfig.remoteKeys.get(index);
         setRemotePadReleased(index);
         if (connected && protocolVersion >= 2) {
-            io.execute(() -> {
-                try {
-                    sppClient.sendRemoteKeyUp(key.note);
-                } catch (IOException | SecurityException error) {
-                    runOnUiThread(() ->
-                            showError("琴键松开失败：" + readable(error)));
+            synchronized (remoteBatchLock) {
+                if (remoteDownBatchScheduled) {
+                    remoteDownFlushNow = true;
+                    remoteBatchLock.notifyAll();
                 }
-            });
+            }
+            queueRemoteKeyUp(key.note);
+        }
+    }
+
+    private void queueRemoteKeyDown(int index) {
+        synchronized (remoteBatchLock) {
+            if (!pendingRemoteDowns.contains(index)) {
+                pendingRemoteDowns.add(index);
+            }
+            if (remoteDownBatchScheduled) {
+                return;
+            }
+            remoteDownBatchScheduled = true;
+            remoteDownFlushNow = false;
+        }
+        io.execute(() -> {
+            ArrayList<Integer> batch = new ArrayList<>();
+            try {
+                waitForRemoteDownBatch();
+                synchronized (remoteBatchLock) {
+                    batch.addAll(pendingRemoteDowns);
+                    pendingRemoteDowns.clear();
+                    remoteDownBatchScheduled = false;
+                    remoteDownFlushNow = false;
+                }
+                ArrayList<RemoteKeyConfig> keys = new ArrayList<>();
+                for (Integer pressedIndex : batch) {
+                    keys.add(performanceConfig.remoteKeys.get(pressedIndex));
+                }
+                sppClient.sendRemoteKeyDowns(keys);
+            } catch (IOException | SecurityException error) {
+                ArrayList<Integer> failed = new ArrayList<>(batch);
+                synchronized (remoteBatchLock) {
+                    failed.addAll(pendingRemoteDowns);
+                    pendingRemoteDowns.clear();
+                    remoteDownBatchScheduled = false;
+                    remoteDownFlushNow = false;
+                }
+                runOnUiThread(() -> {
+                    for (Integer pressedIndex : failed) {
+                        setRemotePadReleased(pressedIndex);
+                    }
+                    showError("琴键按下失败：" + readable(error));
+                });
+            }
+        });
+    }
+
+    private void queueRemoteKeyUp(int note) {
+        synchronized (remoteBatchLock) {
+            if (!pendingRemoteUps.contains(note)) {
+                pendingRemoteUps.add(note);
+            }
+            if (remoteUpBatchScheduled) {
+                return;
+            }
+            remoteUpBatchScheduled = true;
+        }
+        io.execute(() -> {
+            ArrayList<Integer> batch;
+            try {
+                waitForRemoteUpBatch();
+                synchronized (remoteBatchLock) {
+                    batch = new ArrayList<>(pendingRemoteUps);
+                    pendingRemoteUps.clear();
+                    remoteUpBatchScheduled = false;
+                }
+                sppClient.sendRemoteKeyUps(batch);
+            } catch (IOException | SecurityException error) {
+                synchronized (remoteBatchLock) {
+                    pendingRemoteUps.clear();
+                    remoteUpBatchScheduled = false;
+                }
+                runOnUiThread(() -> showError("琴键松开失败：" + readable(error)));
+            }
+        });
+    }
+
+    private void waitForRemoteDownBatch() throws IOException {
+        long deadline = System.nanoTime() +
+                TimeUnit.MILLISECONDS.toNanos(REMOTE_KEY_DOWN_BATCH_MS);
+        synchronized (remoteBatchLock) {
+            while (!remoteDownFlushNow) {
+                long remaining = deadline - System.nanoTime();
+                if (remaining <= 0) {
+                    return;
+                }
+                long millis = TimeUnit.NANOSECONDS.toMillis(remaining);
+                int nanos = (int) (remaining -
+                        TimeUnit.MILLISECONDS.toNanos(millis));
+                try {
+                    remoteBatchLock.wait(millis, nanos);
+                } catch (InterruptedException interrupted) {
+                    Thread.currentThread().interrupt();
+                    throw new IOException("等待琴键批次时被中断", interrupted);
+                }
+            }
+        }
+    }
+
+    private static void waitForRemoteUpBatch() throws IOException {
+        try {
+            Thread.sleep(REMOTE_KEY_UP_BATCH_MS);
+        } catch (InterruptedException interrupted) {
+            Thread.currentThread().interrupt();
+            throw new IOException("等待琴键批次时被中断", interrupted);
         }
     }
 
@@ -907,6 +1010,12 @@ public final class MainActivity extends Activity {
     }
 
     private void releaseAllRemoteKeys(boolean showStatus) {
+        synchronized (remoteBatchLock) {
+            pendingRemoteDowns.clear();
+            pendingRemoteUps.clear();
+            remoteDownFlushNow = true;
+            remoteBatchLock.notifyAll();
+        }
         for (int index = 0; index < 8; index++) {
             setRemotePadReleased(index);
         }

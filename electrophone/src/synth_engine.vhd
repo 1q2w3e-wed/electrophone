@@ -114,6 +114,7 @@ architecture rtl of synth_engine is
     signal voice_scaled_reg : signed(20 downto 0) := (others => '0');
     signal finalize_level : natural range 0 to 2 := 0;
     signal voice_normalizer : natural range 0 to 256 := 0;
+    signal normalizer_divider : natural range 0 to 3 := 0;
     signal normalized_master_gain : natural range 0 to 255 := 0;
 
     function waveform(tone : natural; phase_value : unsigned(31 downto 0))
@@ -173,7 +174,7 @@ architecture rtl of synth_engine is
     end function;
 
     function soft_limiter(value : signed(21 downto 0)) return audio_sample_t is
-        constant KNEE : signed(21 downto 0) := to_signed(24576, 22);
+        constant KNEE : signed(21 downto 0) := to_signed(27000, 22);
         variable magnitude : signed(21 downto 0);
         variable limited_magnitude : signed(15 downto 0);
     begin
@@ -186,26 +187,26 @@ architecture rtl of synth_engine is
         if magnitude <= KNEE then
             limited_magnitude := magnitude(15 downto 0);
         elsif magnitude <= to_signed(32768, 22) then
-            limited_magnitude := to_signed(24576, 16) +
+            limited_magnitude := to_signed(27000, 16) +
                 resize(shift_right(magnitude - KNEE, 1), 16);
         elsif magnitude <= to_signed(65536, 22) then
-            limited_magnitude := to_signed(28672, 16) +
+            limited_magnitude := to_signed(29884, 16) +
                 resize(shift_right(magnitude - to_signed(32768, 22), 4), 16);
         elsif magnitude <= to_signed(131072, 22) then
-            limited_magnitude := to_signed(30720, 16) +
-                resize(shift_right(magnitude - to_signed(65536, 22), 6), 16);
+            limited_magnitude := to_signed(31932, 16) +
+                resize(shift_right(magnitude - to_signed(65536, 22), 8), 16);
         elsif magnitude <= to_signed(262144, 22) then
-            limited_magnitude := to_signed(31744, 16) +
-                resize(shift_right(magnitude - to_signed(131072, 22), 8), 16);
+            limited_magnitude := to_signed(32188, 16) +
+                resize(shift_right(magnitude - to_signed(131072, 22), 10), 16);
         elsif magnitude <= to_signed(524288, 22) then
-            limited_magnitude := to_signed(32256, 16) +
-                resize(shift_right(magnitude - to_signed(262144, 22), 10), 16);
+            limited_magnitude := to_signed(32316, 16) +
+                resize(shift_right(magnitude - to_signed(262144, 22), 12), 16);
         elsif magnitude <= to_signed(1048576, 22) then
-            limited_magnitude := to_signed(32512, 16) +
-                resize(shift_right(magnitude - to_signed(524288, 22), 12), 16);
+            limited_magnitude := to_signed(32412, 16) +
+                resize(shift_right(magnitude - to_signed(524288, 22), 14), 16);
         else
-            limited_magnitude := to_signed(32640, 16) +
-                resize(shift_right(magnitude - to_signed(1048576, 22), 14), 16);
+            limited_magnitude := to_signed(32476, 16) +
+                resize(shift_right(magnitude - to_signed(1048576, 22), 16), 16);
         end if;
 
         if value < 0 then
@@ -327,6 +328,7 @@ begin
         variable glide_sum : signed(32 downto 0);
         variable env_value : natural range 0 to 4095;
         variable expression_value : natural range 0 to 65535;
+        variable normalizer_target_v : natural range 0 to 256;
         variable state_value : env_state_t;
     begin
         if rising_edge(clk) then
@@ -357,6 +359,7 @@ begin
                 voice_scaled_reg <= (others => '0');
                 finalize_level <= 0;
                 voice_normalizer <= 0;
+                normalizer_divider <= 0;
                 normalized_master_gain <= 0;
                 debug_increment_reg <= (others => '0');
                 debug_glide_remaining_reg <= 0;
@@ -396,7 +399,7 @@ begin
                 voice_phase <= 0;
                 sum_accum <= (others => '0');
                 finalize_level <= 0;
-                master_gain <= volume_snapshot * 255 / 100;
+                master_gain <= volume_snapshot * 141 / 100;
                 attack_step <= attack_value(settings.attack_ms);
                 decay_step <= attack_value(settings.decay_ms);
                 release_step <= release_value(settings.release_ms);
@@ -409,10 +412,20 @@ begin
                     ms_tick_active <= '0';
                 end if;
 
-                if test_mode = '1' then
-                    voice_normalizer <= normalizer_for(POLYPHONY);
+                if normalizer_divider = 3 then
+                    normalizer_divider <= 0;
                 else
-                    voice_normalizer <= normalizer_for(active_count);
+                    normalizer_divider <= normalizer_divider + 1;
+                end if;
+                if test_mode = '1' then
+                    normalizer_target_v := normalizer_for(POLYPHONY);
+                else
+                    normalizer_target_v := normalizer_for(active_count);
+                end if;
+                if normalizer_target_v >= voice_normalizer then
+                    voice_normalizer <= normalizer_target_v;
+                elsif normalizer_divider = 3 then
+                    voice_normalizer <= voice_normalizer - 1;
                 end if;
             elsif processing = '1' then
                 case voice_phase is
@@ -647,7 +660,8 @@ begin
                     when 9 =>
                         scaled_voice := wave_sample_reg *
                                         signed('0' & to_unsigned(voice_gain_reg, 8));
-                        voice_scaled_reg <= resize(scaled_voice(24 downto 8), 21);
+                        voice_scaled_reg <= resize(
+                            shift_left(scaled_voice(24 downto 8), 1), 21);
                         voice_phase <= 10;
                     when others =>
                         if voice_index = 0 then

@@ -20,6 +20,8 @@ architecture sim of tb_dashboard is
     signal status : status_t := STATUS_NONE;
     signal pedal_mode : std_logic := '0';
     signal octave_shift : std_logic := '0';
+    signal playback_active : std_logic := '0';
+    signal score_available : std_logic := '0';
     signal active_count : voice_count_t := 0;
     signal audio_sample : audio_sample_t := (others => '0');
     signal sensor_levels : sensor_array_t := (others => (others => '0'));
@@ -39,6 +41,8 @@ begin
             settings_i => cfg, status_i => status,
             pedal_mode_i => pedal_mode,
             octave_shift_i => octave_shift,
+            playback_active_i => playback_active,
+            score_available_i => score_available,
             active_count_i => active_count,
             audio_sample_i => audio_sample,
             sensor_levels_i => sensor_levels,
@@ -116,7 +120,7 @@ begin
 
         variable audio_sum, spectrum_sum, lissajous_sum, pressure_sum : natural;
         variable expression_sum, pedal_sum : natural;
-        variable effect_sum, octave_sum, pluck_sum : natural;
+        variable effect_sum, octave_sum, pluck_sum, score_sum : natural;
         variable env_short_sum, env_long_sum : natural;
     begin
         wait for 5*CLK_PERIOD;
@@ -165,6 +169,11 @@ begin
         render_scene("dashboard_pluck", FOCUS_PLUCK, PREVIEW_ENVELOPE,
                      (0,72,20,100,0,80,0,0,0,FX_DRY),
                      STATUS_NONE, pluck_sum);
+        score_available <= '1';
+        playback_active <= '1';
+        render_scene("dashboard_score", FOCUS_OCTAVE, PREVIEW_AUDIO,
+                     (0,72,20,100,70,200,0,0,0,FX_DRY),
+                     STATUS_NONE, score_sum);
 
         assert audio_sum /= pressure_sum
             report "Audio and pressure previews are identical"
@@ -192,6 +201,9 @@ begin
             severity failure;
         assert pluck_sum /= 0
             report "Pluck mode display is blank"
+            severity failure;
+        assert score_sum /= 0
+            report "Offline score control display is blank"
             severity failure;
 
         report "tb_dashboard passed" severity note;

@@ -18,8 +18,20 @@ architecture sim of tb_ui_controller is
     signal status : status_t;
     signal pedal_mode : std_logic;
     signal octave_shift : std_logic;
+    signal score_available : std_logic := '0';
+    signal score_control : std_logic;
+    signal score_control_count : natural := 0;
 begin
     clk <= not clk after CLK_PERIOD/2;
+
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            if score_control = '1' then
+                score_control_count <= score_control_count + 1;
+            end if;
+        end if;
+    end process;
 
     dut: entity work.ui_controller
         generic map (
@@ -43,7 +55,9 @@ begin
             focus_o => focus, preview_o => preview,
             settings_o => cfg, status_o => status,
             pedal_mode_o => pedal_mode,
-            octave_shift_o => octave_shift
+            octave_shift_o => octave_shift,
+            score_available => score_available,
+            score_control_o => score_control
         );
 
     stimulus: process
@@ -229,6 +243,19 @@ begin
         assert octave_shift = '0'
             report "Octave reset did not return to the low position"
             severity failure;
+        assert score_control_count = 0
+            report "Empty score intercepted the octave reset"
+            severity failure;
+        score_available <= '1';
+        wait for 2*CLK_PERIOD;
+        pulse_right_next;
+        pulse_right_press;
+        wait for 2*CLK_PERIOD;
+        assert score_control_count = 1 and octave_shift = '1'
+            report "Score control did not emit a playback toggle"
+            severity failure;
+        score_available <= '0';
+        wait for 2*CLK_PERIOD;
         pulse_left_next;
         assert focus = FOCUS_TIMBRE severity failure;
         pulse_left_prev;

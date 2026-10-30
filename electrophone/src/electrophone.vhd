@@ -130,6 +130,10 @@ architecture rtl of electrophone is
     signal command_rec_start, command_rec_stop, command_rec_play : std_logic;
     signal command_test_on, command_test_off : std_logic;
     signal test_mode : std_logic := '0';
+    signal score_available : std_logic;
+    signal physical_score_toggle : std_logic;
+    signal physical_score_play : std_logic;
+    signal physical_score_stop : std_logic;
     signal key_down, key_up, key_all_up, dump_start : std_logic;
     signal key_note : note_index_t;
     signal key_velocity : natural range 0 to 31;
@@ -298,11 +302,19 @@ begin
     event_update_index <= recorder_update_index;
     event_update_duration <= recorder_update_duration;
     event_update_velocity <= recorder_update_velocity;
-    sequencer_stop <= command_stop or command_rec_start or command_clear;
+    score_available <= '1' when event_count /= 0 else '0';
+    physical_score_play <= physical_score_toggle when
+        playback_active = '0' and test_mode = '0' else '0';
+    physical_score_stop <= physical_score_toggle when
+        playback_active = '1' else '0';
+    sequencer_stop <= command_stop or command_rec_start or command_clear or
+                      physical_score_stop;
     recorder_stop <= command_rec_stop or command_rec_play or
-                     command_play or command_stop or command_clear;
+                     command_play or command_stop or command_clear or
+                     physical_score_play;
     remote_clear <= command_stop or command_play or
-                    command_rec_play or command_clear;
+                    command_rec_play or command_clear or
+                    physical_score_play;
     event_read_index <= uploader_read_index when uploader_active = '1'
                         else sequencer_read_index;
     bt_tx_data <= uploader_tx_data when uploader_active = '1'
@@ -373,7 +385,9 @@ begin
             focus_o => focus, preview_o => preview,
             settings_o => settings, status_o => status,
             pedal_mode_o => pedal_mode,
-            octave_shift_o => octave_shift
+            octave_shift_o => octave_shift,
+            score_available => score_available,
+            score_control_o => physical_score_toggle
         );
 
     sensors: entity work.sensor_scanner
@@ -509,7 +523,7 @@ begin
         port map (
             clk => clk, rst_n => reset_n,
             ms_tick => ms_tick,
-            play_start => command_play,
+            play_start => command_play or physical_score_play,
             stop => sequencer_stop,
             event_count => event_count,
             read_index => sequencer_read_index,
@@ -677,6 +691,8 @@ begin
             settings_i => settings, status_i => status,
             pedal_mode_i => pedal_mode or test_mode,
             octave_shift_i => octave_shift,
+            playback_active_i => playback_active,
+            score_available_i => score_available,
             active_count_i => active_count,
             audio_sample_i => audio_sample,
             sensor_levels_i => sensor_levels,

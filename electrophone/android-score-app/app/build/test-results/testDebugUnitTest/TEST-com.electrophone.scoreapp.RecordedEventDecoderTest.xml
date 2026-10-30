@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.electrophone.scoreapp.RecordedEventDecoderTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-26T16:41:48" hostname="DESKTOP-D1KIGFE" time="0.0">
+<testsuite name="com.electrophone.scoreapp.RecordedEventDecoderTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-29T14:55:26" hostname="DESKTOP-D1KIGFE" time="0.001">
   <properties/>
-  <testcase name="decodesPackedBinaryEvent" classname="com.electrophone.scoreapp.RecordedEventDecoderTest" time="0.0"/>
+  <testcase name="decodesPackedBinaryEvent" classname="com.electrophone.scoreapp.RecordedEventDecoderTest" time="0.001"/>
   <testcase name="rejectsPackedValueOutsideThirtyTwoBits" classname="com.electrophone.scoreapp.RecordedEventDecoderTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

@@ -85,9 +85,9 @@ file / "D:\Gowin\WorkSpace\1-1\electrophone\src\ui_controller.vhd" "082f0aed7b74
 file / "D:\Gowin\WorkSpace\1-1\electrophone\src\sensor_scanner.vhd" "7e1805ba15be9b064bb6a69072f4dfde6381b67f" "20261028041838.883":
   entity sensor_scanner at 1( 0) + 0 on 36;
   architecture rtl of sensor_scanner at 26( 812) + 0 on 37;
-file / "D:\Gowin\WorkSpace\1-1\electrophone\src\synth_engine.vhd" "db4ce4ba0426060ba03d5b75d98d848fd834b836" "20261028041838.934":
-  entity synth_engine at 1( 0) + 0 on 40;
-  architecture rtl of synth_engine at 30( 955) + 0 on 41;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\src\synth_engine.vhd" "617c8268d2d234f63f300540f875a72725db80cb" "20261029140356.002":
+  entity synth_engine at 1( 0) + 0 on 104;
+  architecture rtl of synth_engine at 30( 955) + 0 on 105;
 file / "D:\Gowin\WorkSpace\1-1\electrophone\src\wave_preview.vhd" "7fbb7e724d9f40184a84e583401381706ba556bb" "20261028041838.984":
   entity wave_preview at 1( 0) + 0 on 44;
   architecture rtl of wave_preview at 26( 818) + 0 on 45;
@@ -130,3 +130,6 @@ file / "D:\Gowin\WorkSpace\1-1\electrophone\sim\tb_synth_engine.vhd" "47d1fe12e8
 file / "D:\Gowin\WorkSpace\1-1\electrophone\sim\tb_test32_mode.vhd" "b1fb4e0bb82be70d8d18df879de465fcc5868112" "20261028041853.155":
   entity tb_test32_mode at 1( 0) + 0 on 96;
   architecture sim of tb_test32_mode at 11( 267) + 0 on 97;
+file / "D:\Gowin\WorkSpace\1-1\electrophone\sim\tb_normalizer_smoothing.vhd" "4c51e93f3f469b026449e56c83de3b123573a482" "20261029140356.029":
+  entity tb_normalizer_smoothing at 1( 0) + 0 on 106;
+  architecture sim of tb_normalizer_smoothing at 10( 213) + 0 on 107;
